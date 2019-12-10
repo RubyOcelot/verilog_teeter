@@ -12,6 +12,7 @@ module accelBallMove #(
     input screenend,
     input [7:0]accel_x,
     input [7:0]accel_y,
+    input is_game_playing,
     output [9:0]bl_x,
     output [9:0]bl_y
 );
@@ -31,11 +32,13 @@ module accelBallMove #(
     always @(posedge CLK) begin
         if(rst)
             calc_cnt<=0;
-        else if(calc_cnt>=CALC_CNT-1) begin
-            calc_cnt<=0;
+        else if(is_game_playing) begin
+            if(calc_cnt>=CALC_CNT-1) begin
+                calc_cnt<=0;
+            end
+            else
+                calc_cnt<=calc_cnt+1;
         end
-        else
-            calc_cnt<=calc_cnt+1;
     end
     wire calc_time;
     assign calc_time=(calc_cnt==(CALC_CNT-1));

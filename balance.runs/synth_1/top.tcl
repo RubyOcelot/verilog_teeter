@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -43,9 +45,9 @@ read_verilog -library xil_defaultlib {
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v
-  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/vga320x180.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v

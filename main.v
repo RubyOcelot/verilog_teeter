@@ -116,6 +116,7 @@ module top(
 
     //move the ball
     
+    wire is_game_playing;
     accelBallMove #(
         .SPRITE_BL_X(SPRITE_BL_X),
         .SPRITE_BL_Y(SPRITE_BL_Y),
@@ -129,6 +130,7 @@ module top(
         .screenend(screenend),
         .accel_x(accel_x[11:4]),
         .accel_y(accel_y[11:4]),
+        .is_game_playing(is_game_playing),
         .bl_x(rolling_x),
         .bl_y(rolling_y)
     );
@@ -137,7 +139,6 @@ module top(
     //drop in holes
     wire [9:0]fix_x,fix_y;
     wire playing_win,playing_fail;
-    wire is_game_playing;
     dropInHoles #(
         .RADIUS(14),
         .MAX_FAILHOLE_NUM(MAX_FAILHOLE_NUM),

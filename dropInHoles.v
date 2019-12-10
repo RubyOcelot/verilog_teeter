@@ -67,13 +67,13 @@ always @(*) begin
     end
 end
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     winHole(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_wh_pos_x),
@@ -81,13 +81,13 @@ dropInSingleHole #(
     .o_fall_in(o_win)
 );
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     failHole1(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_fh_pos_x[9:0]),
@@ -95,13 +95,13 @@ dropInSingleHole #(
     .o_fall_in(fail[0])
 );
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     failHole2(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_fh_pos_x[19:10]),
@@ -109,13 +109,13 @@ dropInSingleHole #(
     .o_fall_in(fail[1])
 );
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     failHole3(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_fh_pos_x[29:20]),
@@ -123,13 +123,13 @@ dropInSingleHole #(
     .o_fall_in(fail[2])
 );
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     failHole4(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_fh_pos_x[39:30]),
@@ -137,13 +137,13 @@ dropInSingleHole #(
     .o_fall_in(fail[3])
 );
 
-dropInSingleHole #(
+positionConflict #(
     .RADIUS(RADIUS)
     )
     failHole5(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .is_game_playing(is_game_playing),
+    .i_decide_ena(is_game_playing),
     .i_bl_x(i_bl_x),
     .i_bl_y(i_bl_y),
     .i_hole_pos_x(i_fh_pos_x[49:40]),

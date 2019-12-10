@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Dec 10 20:16:00 2019
-# Process ID: 14056
+# Start of session at: Tue Dec 10 22:02:22 2019
+# Process ID: 10072
 # Current directory: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.vds
@@ -19,12 +19,12 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13556 
+INFO: Helper process launched with PID 16596 
 WARNING: [Synth 8-6901] identifier 'fh_cnt' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:148]
 WARNING: [Synth 8-6901] identifier 'new_frame' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:149]
 WARNING: [Synth 8-6901] identifier 'new_layer' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:150]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 823.352 ; gain = 180.879
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 824.859 ; gain = 182.438
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
 	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
@@ -167,8 +167,8 @@ INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized2' (3#1) 
 INFO: [Synth 8-6155] done synthesizing module 'layerControl' (4#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'drawScreenCtrl' (5#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:1]
 INFO: [Synth 8-6157] synthesizing module 'myAccelerometerCtrl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-14056-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (6#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-14056-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-10072-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (6#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-10072-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'myAccelerometerCtrl' (7#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
 INFO: [Synth 8-6157] synthesizing module 'accelBallMove' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v:1]
 	Parameter SPRITE_BL_X bound to: 144 - type: integer 
@@ -211,19 +211,15 @@ INFO: [Synth 8-6157] synthesizing module 'dropInHoles' [C:/Users/14832/Documents
 	Parameter MAX_FAILHOLE_NUM bound to: 5 - type: integer 
 	Parameter SPRITE_BL_X bound to: 144 - type: integer 
 	Parameter SPRITE_BL_Y bound to: 74 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'dropInSingleHole' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:1]
+INFO: [Synth 8-6157] synthesizing module 'positionConflict' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:1]
 	Parameter RADIUS bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'dropInSingleHole' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'positionConflict' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'dropInHoles' (12#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'top' (13#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
 WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
 WARNING: [Synth 8-3331] design layerControl has unconnected port o_led[10]
-WARNING: [Synth 8-3331] design top has unconnected port sw[3]
-WARNING: [Synth 8-3331] design top has unconnected port sw[2]
-WARNING: [Synth 8-3331] design top has unconnected port sw[1]
-WARNING: [Synth 8-3331] design top has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 871.754 ; gain = 229.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 873.066 ; gain = 230.645
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -236,10 +232,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 871.754 ; gain = 229.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 873.066 ; gain = 230.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 871.754 ; gain = 229.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 873.066 ; gain = 230.645
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -253,41 +249,30 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1014.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1016.520 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1014.176 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1016.520 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1016.520 ; gain = 374.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1016.520 ; gain = 374.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for getAccel/getXY. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1016.520 ; gain = 374.098
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'top'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-           GAME_RESETING |                               00 |                             0100
-            GAME_PLAYING |                               01 |                             0001
-                  iSTATE |                               10 |                             0010
-                 iSTATE0 |                               11 |                             0011
-*
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1014.176 ; gain = 371.703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1016.520 ; gain = 374.098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -319,7 +304,7 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 6     
 	                6 Bit    Registers := 3     
 	                5 Bit    Registers := 3     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 13    
 +---Multipliers : 
@@ -336,13 +321,14 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 6     
+	   2 Input     10 Bit        Muxes := 8     
 	   4 Input     10 Bit        Muxes := 2     
-	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 4     
-	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 31    
+	   2 Input      1 Bit        Muxes := 30    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -356,13 +342,14 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
 	   4 Input     10 Bit        Muxes := 2     
-	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 1     
 Module vga320x180 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -497,7 +484,7 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module dropInSingleHole 
+Module positionConflict 
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     32 Bit       Adders := 2     
@@ -555,18 +542,18 @@ DSP Report: Generating DSP drawLayers/drawBall/address_fb1_reg, operation Mode i
 DSP Report: register drawLayers/drawBall/address_fb1_reg is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
 DSP Report: register drawLayers/drawBall/address_fb1_reg is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
 DSP Report: operator drawLayers/drawBall/address_fb10 is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:25]
 DSP Report: Generating DSP winHole/fall_in2, operation Mode is: A*B.
 DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
 DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
@@ -713,10 +700,6 @@ DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
 DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
 WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
 WARNING: [Synth 8-3331] design drawScreenCtrl has unconnected port o_led[10]
-WARNING: [Synth 8-3331] design top has unconnected port sw[3]
-WARNING: [Synth 8-3331] design top has unconnected port sw[2]
-WARNING: [Synth 8-3331] design top has unconnected port sw[1]
-WARNING: [Synth 8-3331] design top has unconnected port sw[0]
 WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_a/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
 WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_b/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawBackground/address_s_reg[10]' (FDE) to 'drawScreen/drawLayers/drawBackground/address_s_reg[11]'
@@ -726,7 +709,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScre
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawBall/address_s_reg[12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/layer_state_next_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.176 ; gain = 371.703
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1016.520 ; gain = 374.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -832,9 +815,9 @@ INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_ar
 INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_5/drawScreen/spritebuf/memory_array_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_5/drawScreen/spritebuf/memory_array_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_6/drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_3/drawScreen/spritebuf/memory_array_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_3/drawScreen/spritebuf/memory_array_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -845,13 +828,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 1054.035 ; gain = 411.563
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1058.215 ; gain = 415.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1086.641 ; gain = 444.168
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1104.918 ; gain = 462.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -895,7 +878,7 @@ INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_arr
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_array_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 1096.684 ; gain = 454.211
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 1112.355 ; gain = 469.934
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -919,7 +902,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -932,7 +915,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -944,25 +927,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -987,19 +970,19 @@ Report Cell Usage:
 |6     |DSP48E1_2        |     3|
 |7     |DSP48E1_3        |    36|
 |8     |LUT1             |    26|
-|9     |LUT2             |   529|
-|10    |LUT3             |   110|
-|11    |LUT4             |    64|
-|12    |LUT5             |   100|
-|13    |LUT6             |   246|
+|9     |LUT2             |   527|
+|10    |LUT3             |    51|
+|11    |LUT4             |    97|
+|12    |LUT5             |   200|
+|13    |LUT6             |   211|
 |14    |MUXF7            |    12|
 |15    |RAMB18E1         |     1|
 |16    |RAMB36E1         |    12|
 |17    |RAMB36E1_1       |    12|
 |18    |RAMB36E1_2       |     1|
 |19    |RAMB36E1_3       |     1|
-|20    |FDRE             |   431|
-|21    |FDSE             |    15|
+|20    |FDRE             |   434|
+|21    |FDSE             |    16|
 |22    |IBUF             |     4|
 |23    |OBUF             |    32|
 |24    |OBUFT            |     1|
@@ -1009,54 +992,54 @@ Report Instance Areas:
 +------+---------------------+---------------------------+------+
 |      |Instance             |Module                     |Cells |
 +------+---------------------+---------------------------+------+
-|1     |top                  |                           |  1873|
-|2     |  drawScreen         |drawScreenCtrl             |   601|
-|3     |    display          |vga320x180                 |   102|
-|4     |    drawLayers       |layerControl               |   365|
-|5     |      drawBackground |drawLayer                  |   106|
-|6     |      drawBall       |drawLayer__parameterized2  |    87|
-|7     |      drawFailhole   |drawLayer__parameterized0  |    82|
-|8     |      drawWinhole    |drawLayer__parameterized1  |    68|
-|9     |    spriteAlphabuf   |sram__parameterized1       |     1|
+|1     |top                  |                           |  1914|
+|2     |  drawScreen         |drawScreenCtrl             |   597|
+|3     |    display          |vga320x180                 |    97|
+|4     |    drawLayers       |layerControl               |   364|
+|5     |      drawBackground |drawLayer                  |    91|
+|6     |      drawBall       |drawLayer__parameterized2  |   101|
+|7     |      drawFailhole   |drawLayer__parameterized0  |    81|
+|8     |      drawWinhole    |drawLayer__parameterized1  |    70|
+|9     |    spriteAlphabuf   |sram__parameterized1       |     3|
 |10    |    spritebuf        |sram__parameterized0       |     2|
 |11    |    vram_a           |sram                       |    24|
 |12    |    vram_b           |sram_6                     |    36|
-|13    |  dropControl        |dropInHoles                |   710|
-|14    |    failHole1        |dropInSingleHole           |   141|
-|15    |    failHole2        |dropInSingleHole_1         |   100|
-|16    |    failHole3        |dropInSingleHole_2         |   101|
-|17    |    failHole4        |dropInSingleHole_3         |   102|
-|18    |    failHole5        |dropInSingleHole_4         |    99|
-|19    |    winHole          |dropInSingleHole_5         |   167|
+|13    |  dropControl        |dropInHoles                |   735|
+|14    |    failHole1        |positionConflict           |   166|
+|15    |    failHole2        |positionConflict_1         |   100|
+|16    |    failHole3        |positionConflict_2         |   113|
+|17    |    failHole4        |positionConflict_3         |   111|
+|18    |    failHole5        |positionConflict_4         |   103|
+|19    |    winHole          |positionConflict_5         |   142|
 |20    |  getAccel           |myAccelerometerCtrl        |   160|
-|21    |  moveTheBall        |accelBallMove              |   354|
-|22    |    pos_x            |calculateX                 |    81|
+|21    |  moveTheBall        |accelBallMove              |   369|
+|22    |    pos_x            |calculateX                 |    80|
 |23    |    pos_y            |calculateX__parameterized0 |    88|
 |24    |    vx               |calculateV                 |    36|
 |25    |    vy               |calculateV_0               |    36|
 +------+---------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1116.137 ; gain = 473.715
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 1102.629 ; gain = 317.734
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:58 . Memory (MB): peak = 1116.137 ; gain = 330.262
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1116.137 ; gain = 473.715
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 262 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1102.629 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1132.215 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-109 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+107 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 1102.629 ; gain = 718.391
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1102.629 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:12 . Memory (MB): peak = 1132.215 ; gain = 745.953
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1132.215 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 10 20:17:13 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 10 22:03:48 2019...
