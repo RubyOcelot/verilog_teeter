@@ -1,0 +1,42 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Dec  6 13:37:26 2019
+| Host         : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ADXL362Control_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of ADXL362Control_1 (xilinx.com:user:ADXL362Control:1.0) from (Rev. 2) to (Rev. 3)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+Parameter 'C_ADXL362Ctrl_Interface_BASEADDR' is no longer present on the upgraded IP 'ADXL362Control_1', and cannot be set to '0xFFFFFFFF'
+
+Parameter 'C_ADXL362Ctrl_Interface_HIGHADDR' is no longer present on the upgraded IP 'ADXL362Control_1', and cannot be set to '0x00000000'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:ADXL362Control:1.0 -user_name ADXL362Control_1
+set_property -dict "\
+  CONFIG.C_ADXL362Ctrl_Interface_ADDR_WIDTH {5} \
+  CONFIG.C_ADXL362Ctrl_Interface_DATA_WIDTH {32} \
+  CONFIG.Component_Name {ADXL362Control_1} " [get_ips ADXL362Control_1]
+
+

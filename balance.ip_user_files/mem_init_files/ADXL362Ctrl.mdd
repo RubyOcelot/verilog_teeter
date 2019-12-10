@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER ADXL362Ctrl
+	OPTION supported_peripherals = (ADXL362Ctrl);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = ADXL362Ctrl;
+END DRIVER

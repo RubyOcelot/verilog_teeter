@@ -1,0 +1,1062 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Dec 10 20:16:00 2019
+# Process ID: 14056
+# Current directory: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.vds
+# Journal file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ip_repo/ADXL362Control_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/software/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13556 
+WARNING: [Synth 8-6901] identifier 'fh_cnt' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:148]
+WARNING: [Synth 8-6901] identifier 'new_frame' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:149]
+WARNING: [Synth 8-6901] identifier 'new_layer' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:150]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 823.352 ; gain = 180.879
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 180 - type: integer 
+	Parameter VRAM_DEPTH bound to: 57600 - type: integer 
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+	Parameter VRAM_D_WIDTH bound to: 8 - type: integer 
+	Parameter PIXEL_COORD_BIT bound to: 10 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITE_COUNT bound to: 8 - type: integer 
+	Parameter SPRITEBUF_D_WIDTH bound to: 8 - type: integer 
+	Parameter SPRITEBUF_DEPTH bound to: 8192 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SPRITE_BG_INDEX bound to: 0 - type: integer 
+	Parameter SPRITE_BL_INDEX bound to: 1 - type: integer 
+	Parameter SPRITE_FH_INDEX bound to: 2 - type: integer 
+	Parameter SPRITE_WH_INDEX bound to: 3 - type: integer 
+	Parameter SPRITE_BG_OFFSET bound to: 0 - type: integer 
+	Parameter SPRITE_BL_OFFSET bound to: 1024 - type: integer 
+	Parameter SPRITE_FH_OFFSET bound to: 2048 - type: integer 
+	Parameter SPRITE_BL_X bound to: 144 - type: integer 
+	Parameter SPRITE_BL_Y bound to: 74 - type: integer 
+	Parameter MAX_FAILHOLE_NUM bound to: 5 - type: integer 
+	Parameter GAME_IDLE bound to: 4'b0000 
+	Parameter GAME_PLAYING bound to: 4'b0001 
+	Parameter GAME_FAIL bound to: 4'b0010 
+	Parameter GAME_WIN bound to: 4'b0011 
+	Parameter GAME_RESETING bound to: 4'b0100 
+	Parameter GAME_RST bound to: 4'b0100 
+INFO: [Synth 8-6157] synthesizing module 'drawScreenCtrl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:1]
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+	Parameter VRAM_D_WIDTH bound to: 8 - type: integer 
+	Parameter VRAM_DEPTH bound to: 57600 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 180 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITE_BL_INDEX bound to: 1 - type: integer 
+	Parameter SPRITE_BG_INDEX bound to: 0 - type: integer 
+	Parameter SPRITE_FH_INDEX bound to: 2 - type: integer 
+	Parameter SPRITE_WH_INDEX bound to: 3 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SPRITEBUF_D_WIDTH bound to: 8 - type: integer 
+	Parameter SPRITEBUF_DEPTH bound to: 8192 - type: integer 
+	Parameter MAX_FAILHOLE_NUM bound to: 5 - type: integer 
+	Parameter SPRITE_BL_OFFSET bound to: 1024 - type: integer 
+	Parameter SPRITE_BG_OFFSET bound to: 0 - type: integer 
+	Parameter SPRITE_FH_OFFSET bound to: 2048 - type: integer 
+	Parameter SPRITE_WH_OFFSET bound to: 3072 - type: integer 
+	Parameter SCREEN_READING_A bound to: 1'b0 
+	Parameter SCREEN_READING_B bound to: 1'b1 
+INFO: [Synth 8-251] Loading palette. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:120]
+INFO: [Synth 8-3876] $readmem data file 'balance_palette.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:121]
+INFO: [Synth 8-6157] synthesizing module 'vga320x180' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/vga320x180.v:1]
+	Parameter HS_STA bound to: 16 - type: integer 
+	Parameter HS_END bound to: 112 - type: integer 
+	Parameter HA_STA bound to: 160 - type: integer 
+	Parameter VS_STA bound to: 490 - type: integer 
+	Parameter VS_END bound to: 492 - type: integer 
+	Parameter VA_STA bound to: 60 - type: integer 
+	Parameter VA_END bound to: 420 - type: integer 
+	Parameter LINE bound to: 800 - type: integer 
+	Parameter SCREEN bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga320x180' (1#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/vga320x180.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+	Parameter ADDR_WIDTH bound to: 16 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 57600 - type: integer 
+	Parameter MEMFILE bound to: (null) - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'sram' (2#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+	Parameter ADDR_WIDTH bound to: 13 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 8192 - type: integer 
+	Parameter MEMFILE bound to: balance.mem - type: string 
+INFO: [Synth 8-251] Loading memor†A5>JDØ+A3˛¬ [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:14]
+INFO: [Synth 8-3876] $readmem data file 'balance.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized0' (2#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized1' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+	Parameter ADDR_WIDTH bound to: 13 - type: integer 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 8192 - type: integer 
+	Parameter MEMFILE bound to: balance_alpha.mem - type: string 
+INFO: [Synth 8-251] Loading m«Œ€‘§8<?O±0=3˛¬ [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:14]
+INFO: [Synth 8-3876] $readmem data file 'balance_alpha.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized1' (2#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layerControl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:1]
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 180 - type: integer 
+	Parameter SPRITE_BG_OFFSET bound to: 0 - type: integer 
+	Parameter SPRITE_FH_OFFSET bound to: 2048 - type: integer 
+	Parameter SPRITE_WH_OFFSET bound to: 3072 - type: integer 
+	Parameter SPRITE_BL_OFFSET bound to: 1024 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter MAX_FAILHOLE_NUM bound to: 5 - type: integer 
+	Parameter LAYER_IDLE bound to: 4'b0011 
+	Parameter LAYER_BACKGROUND bound to: 4'b0000 
+	Parameter LAYER_FAILHOLE bound to: 4'b0001 
+	Parameter LAYER_WINHOLE bound to: 4'b0010 
+	Parameter LAYER_BALL bound to: 4'b0100 
+	Parameter LAYER_RESETING bound to: 4'b0101 
+	Parameter LAYER_RST bound to: 4'b0011 
+INFO: [Synth 8-6157] synthesizing module 'drawLayer' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+	Parameter PIX_WIDTH bound to: 321 - type: integer 
+	Parameter PIX_HEIGHT bound to: 180 - type: integer 
+	Parameter SPRITE_OFFSET bound to: 0 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'drawLayer' (3#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'drawLayer__parameterized0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+	Parameter PIX_WIDTH bound to: 32 - type: integer 
+	Parameter PIX_HEIGHT bound to: 32 - type: integer 
+	Parameter SPRITE_OFFSET bound to: 2048 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized0' (3#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'drawLayer__parameterized1' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+	Parameter PIX_WIDTH bound to: 32 - type: integer 
+	Parameter PIX_HEIGHT bound to: 32 - type: integer 
+	Parameter SPRITE_OFFSET bound to: 3072 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized1' (3#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'drawLayer__parameterized2' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+	Parameter PIX_WIDTH bound to: 32 - type: integer 
+	Parameter PIX_HEIGHT bound to: 32 - type: integer 
+	Parameter SPRITE_OFFSET bound to: 1024 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SPRITEBUF_A_WIDTH bound to: 13 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter VRAM_A_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized2' (3#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawLayer.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layerControl' (4#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'drawScreenCtrl' (5#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:1]
+INFO: [Synth 8-6157] synthesizing module 'myAccelerometerCtrl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-14056-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (6#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-14056-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'myAccelerometerCtrl' (7#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'accelBallMove' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v:1]
+	Parameter SPRITE_BL_X bound to: 144 - type: integer 
+	Parameter SPRITE_BL_Y bound to: 74 - type: integer 
+	Parameter SPRITE_SIZE bound to: 32 - type: integer 
+	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 180 - type: integer 
+	Parameter PIXEL_COORD_BIT bound to: 10 - type: integer 
+	Parameter SCREEN_FREQUNCY bound to: 60 - type: integer 
+	Parameter GRAVITY bound to: 98 - type: integer 
+	Parameter SCREEN_WIDTH_DM bound to: 4 - type: integer 
+	Parameter VELOCITY_SHIFT_BIT bound to: 8 - type: integer 
+	Parameter VELOCITY_CONST bound to: 17 - type: integer 
+	Parameter ACCEL_WIDTH bound to: 8 - type: integer 
+	Parameter DELTA_VELOCITY_BIT bound to: 32 - type: integer 
+	Parameter VELOCITY_BIT bound to: 32 - type: integer 
+	Parameter ARITH_BIT_WIDTH bound to: 32 - type: integer 
+	Parameter CALC_CNT bound to: 35293 - type: integer 
+	Parameter VELOCITY_SHIFT bound to: 8 - type: integer 
+	Parameter POSITION_SHIFT bound to: 8 - type: integer 
+	Parameter NEG bound to: -2147483648 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'calculateV' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateV.v:1]
+	Parameter VELOCITY_SHIFT bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'calculateV' (8#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateV.v:1]
+INFO: [Synth 8-6157] synthesizing module 'calculateX' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateX.v:1]
+	Parameter POSITION_SHIFT bound to: 8 - type: integer 
+	Parameter RST0_VALUE bound to: 144 - type: integer 
+	Parameter RST1_VALUE bound to: 0 - type: integer 
+	Parameter RST2_VALUE bound to: 288 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'calculateX' (9#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateX.v:1]
+INFO: [Synth 8-6157] synthesizing module 'calculateX__parameterized0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateX.v:1]
+	Parameter POSITION_SHIFT bound to: 8 - type: integer 
+	Parameter RST0_VALUE bound to: 74 - type: integer 
+	Parameter RST1_VALUE bound to: 0 - type: integer 
+	Parameter RST2_VALUE bound to: 148 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'calculateX__parameterized0' (9#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateX.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'accelBallMove' (10#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dropInHoles' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v:1]
+	Parameter RADIUS bound to: 14 - type: integer 
+	Parameter MAX_FAILHOLE_NUM bound to: 5 - type: integer 
+	Parameter SPRITE_BL_X bound to: 144 - type: integer 
+	Parameter SPRITE_BL_Y bound to: 74 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'dropInSingleHole' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:1]
+	Parameter RADIUS bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dropInSingleHole' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dropInHoles' (12#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (13#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
+WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
+WARNING: [Synth 8-3331] design layerControl has unconnected port o_led[10]
+WARNING: [Synth 8-3331] design top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top has unconnected port sw[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 871.754 ; gain = 229.281
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 871.754 ; gain = 229.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 871.754 ; gain = 229.281
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.srcs/sources_1/ip/ADXL362Control_0/ADXL362Control_0/ADXL362Control_0_in_context.xdc] for cell 'getAccel/getXY'
+Finished Parsing XDC File [c:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.srcs/sources_1/ip/ADXL362Control_0/ADXL362Control_0/ADXL362Control_0_in_context.xdc] for cell 'getAccel/getXY'
+Parsing XDC File [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/Nexys-4-DDR-Master.xdc]
+Finished Parsing XDC File [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/Nexys-4-DDR-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1014.176 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1014.176 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for getAccel/getXY. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.176 ; gain = 371.703
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           GAME_RESETING |                               00 |                             0100
+            GAME_PLAYING |                               01 |                             0001
+                  iSTATE |                               10 |                             0010
+                 iSTATE0 |                               11 |                             0011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'sequential' in module 'top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1014.176 ; gain = 371.703
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 10    
+	   3 Input     32 Bit       Adders := 12    
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 7     
+	               13 Bit    Registers := 4     
+	               12 Bit    Registers := 3     
+	               10 Bit    Registers := 6     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---Multipliers : 
+	                32x32  Multipliers := 12    
++---RAMs : 
+	             450K Bit         RAMs := 2     
+	              64K Bit         RAMs := 1     
+	               8K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 2     
+	   3 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 6     
+	   4 Input     10 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 31    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     10 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module vga320x180 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+Module sram 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	             450K Bit         RAMs := 1     
+Module sram__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	              64K Bit         RAMs := 1     
+Module sram__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---RAMs : 
+	               8K Bit         RAMs := 1     
+Module drawLayer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module drawLayer__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module drawLayer__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module drawLayer__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module layerControl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module drawScreenCtrl 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+Module myAccelerometerCtrl 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 2     
+Module calculateX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input     17 Bit        Muxes := 1     
+Module calculateX__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+Module accelBallMove 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module dropInSingleHole 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                32x32  Multipliers := 2     
+Module dropInHoles 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP drawLayers/drawBackground/address_fb1_reg, operation Mode is: C'+A*(B:0x140).
+DSP Report: register drawLayers/drawBackground/address_fb1_reg is absorbed into DSP drawLayers/drawBackground/address_fb1_reg.
+DSP Report: register drawLayers/drawBackground/address_fb1_reg is absorbed into DSP drawLayers/drawBackground/address_fb1_reg.
+DSP Report: operator drawLayers/drawBackground/address_fb10 is absorbed into DSP drawLayers/drawBackground/address_fb1_reg.
+DSP Report: operator drawLayers/drawBackground/address_fb12 is absorbed into DSP drawLayers/drawBackground/address_fb1_reg.
+DSP Report: Generating DSP drawLayers/drawFailhole/address_fb12, operation Mode is: (D'+A)*(B:0x140).
+DSP Report: register drawLayers/drawFailhole/address_fb12 is absorbed into DSP drawLayers/drawFailhole/address_fb12.
+DSP Report: operator drawLayers/drawFailhole/address_fb12 is absorbed into DSP drawLayers/drawFailhole/address_fb12.
+DSP Report: operator drawLayers/drawFailhole/address_fb13 is absorbed into DSP drawLayers/drawFailhole/address_fb12.
+DSP Report: Generating DSP drawLayers/drawFailhole/address_fb1_reg, operation Mode is: (PCIN+(A:0x0):B2+C)'.
+DSP Report: register drawLayers/drawFailhole/address_fb1_reg is absorbed into DSP drawLayers/drawFailhole/address_fb1_reg.
+DSP Report: register drawLayers/drawFailhole/address_fb1_reg is absorbed into DSP drawLayers/drawFailhole/address_fb1_reg.
+DSP Report: operator drawLayers/drawFailhole/address_fb10 is absorbed into DSP drawLayers/drawFailhole/address_fb1_reg.
+DSP Report: Generating DSP drawLayers/drawWinhole/address_fb12, operation Mode is: (D'+A)*(B:0x140).
+DSP Report: register drawLayers/drawWinhole/address_fb12 is absorbed into DSP drawLayers/drawWinhole/address_fb12.
+DSP Report: operator drawLayers/drawWinhole/address_fb12 is absorbed into DSP drawLayers/drawWinhole/address_fb12.
+DSP Report: operator drawLayers/drawWinhole/address_fb13 is absorbed into DSP drawLayers/drawWinhole/address_fb12.
+DSP Report: Generating DSP drawLayers/drawWinhole/address_fb1_reg, operation Mode is: (PCIN+(A:0x0):B2+C)'.
+DSP Report: register drawLayers/drawWinhole/address_fb1_reg is absorbed into DSP drawLayers/drawWinhole/address_fb1_reg.
+DSP Report: register drawLayers/drawWinhole/address_fb1_reg is absorbed into DSP drawLayers/drawWinhole/address_fb1_reg.
+DSP Report: operator drawLayers/drawWinhole/address_fb10 is absorbed into DSP drawLayers/drawWinhole/address_fb1_reg.
+DSP Report: Generating DSP drawLayers/drawBall/address_fb12, operation Mode is: (D'+A)*(B:0x140).
+DSP Report: register drawLayers/drawBall/address_fb12 is absorbed into DSP drawLayers/drawBall/address_fb12.
+DSP Report: operator drawLayers/drawBall/address_fb12 is absorbed into DSP drawLayers/drawBall/address_fb12.
+DSP Report: operator drawLayers/drawBall/address_fb13 is absorbed into DSP drawLayers/drawBall/address_fb12.
+DSP Report: Generating DSP drawLayers/drawBall/address_fb1_reg, operation Mode is: (PCIN+(A:0x0):B2+C)'.
+DSP Report: register drawLayers/drawBall/address_fb1_reg is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
+DSP Report: register drawLayers/drawBall/address_fb1_reg is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
+DSP Report: operator drawLayers/drawBall/address_fb10 is absorbed into DSP drawLayers/drawBall/address_fb1_reg.
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:26]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInSingleHole.v:25]
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP winHole/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: operator winHole/fall_in2 is absorbed into DSP winHole/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole1/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: operator failHole1/fall_in2 is absorbed into DSP failHole1/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole2/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: operator failHole2/fall_in2 is absorbed into DSP failHole2/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole3/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: operator failHole3/fall_in2 is absorbed into DSP failHole3/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole4/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: operator failHole4/fall_in2 is absorbed into DSP failHole4/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: Generating DSP failHole5/fall_in2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+DSP Report: operator failHole5/fall_in2 is absorbed into DSP failHole5/fall_in2.
+WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
+WARNING: [Synth 8-3331] design drawScreenCtrl has unconnected port o_led[10]
+WARNING: [Synth 8-3331] design top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top has unconnected port sw[0]
+WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_a/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
+WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_b/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
+INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawBackground/address_s_reg[10]' (FDE) to 'drawScreen/drawLayers/drawBackground/address_s_reg[11]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\drawScreen/drawLayers/drawFailhole/address_s_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawBackground/address_s_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawFailhole/address_s_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawBall/address_s_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/layer_state_next_reg[3] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1014.176 ; gain = 371.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------+------------+---------------+----------------+
+|Module Name    | RTL Object | Depth x Width | Implemented As | 
++---------------+------------+---------------+----------------+
+|drawScreenCtrl | p_0_out    | 64x12         | LUT            | 
+|drawScreenCtrl | p_0_out    | 64x12         | LUT            | 
+|drawScreenCtrl | p_0_out    | 64x12         | LUT            | 
+|drawScreenCtrl | p_0_out    | 64x12         | LUT            | 
++---------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping  Report (see note below)
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top                   | drawScreen/vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|top                   | drawScreen/vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|sram__parameterized0: | memory_array_reg                   | 8 K x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 0      | 2      | 
+|sram__parameterized1: | memory_array_reg                   | 8 K x 1(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping  Report (see note below)
++---------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|drawScreenCtrl | C'+A*(B:0x140)       | 11     | 9      | 10     | -      | 16     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|drawScreenCtrl | (D'+A)*(B:0x140)     | 10     | 9      | -      | 10     | 20     | 0    | 0    | -    | 1    | 0     | 0    | 0    | 
+|drawScreenCtrl | (PCIN+(A:0x0):B2+C)' | 30     | 10     | 10     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
+|drawScreenCtrl | (D'+A)*(B:0x140)     | 10     | 9      | -      | 10     | 20     | 0    | 0    | -    | 1    | 0     | 0    | 0    | 
+|drawScreenCtrl | (PCIN+(A:0x0):B2+C)' | 30     | 10     | 10     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
+|drawScreenCtrl | (D'+A)*(B:0x140)     | 10     | 9      | -      | 10     | 20     | 0    | 0    | -    | 1    | 0     | 0    | 0    | 
+|drawScreenCtrl | (PCIN+(A:0x0):B2+C)' | 30     | 10     | 10     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | A*B                  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dropInHoles    | (PCIN>>17)+A*B       | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++---------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/drawScreen/vram_a/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_b/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_5/drawScreen/spritebuf/memory_array_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_5/drawScreen/spritebuf/memory_array_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_6/drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 1054.035 ; gain = 411.563
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1086.641 ; gain = 444.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top                   | drawScreen/vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|top                   | drawScreen/vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|sram__parameterized0: | memory_array_reg                   | 8 K x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 0      | 2      | 
+|sram__parameterized1: | memory_array_reg                   | 8 K x 1(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_a/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/vram_b/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_array_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_array_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 1096.684 ; gain = 454.211
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------+----------+
+|      |BlackBox name    |Instances |
++------+-----------------+----------+
+|1     |ADXL362Control_0 |         1|
++------+-----------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |ADXL362Control_0 |     1|
+|2     |BUFG             |     1|
+|3     |CARRY4           |   180|
+|4     |DSP48E1          |     1|
+|5     |DSP48E1_1        |     3|
+|6     |DSP48E1_2        |     3|
+|7     |DSP48E1_3        |    36|
+|8     |LUT1             |    26|
+|9     |LUT2             |   529|
+|10    |LUT3             |   110|
+|11    |LUT4             |    64|
+|12    |LUT5             |   100|
+|13    |LUT6             |   246|
+|14    |MUXF7            |    12|
+|15    |RAMB18E1         |     1|
+|16    |RAMB36E1         |    12|
+|17    |RAMB36E1_1       |    12|
+|18    |RAMB36E1_2       |     1|
+|19    |RAMB36E1_3       |     1|
+|20    |FDRE             |   431|
+|21    |FDSE             |    15|
+|22    |IBUF             |     4|
+|23    |OBUF             |    32|
+|24    |OBUFT            |     1|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+---------------------+---------------------------+------+
+|      |Instance             |Module                     |Cells |
++------+---------------------+---------------------------+------+
+|1     |top                  |                           |  1873|
+|2     |  drawScreen         |drawScreenCtrl             |   601|
+|3     |    display          |vga320x180                 |   102|
+|4     |    drawLayers       |layerControl               |   365|
+|5     |      drawBackground |drawLayer                  |   106|
+|6     |      drawBall       |drawLayer__parameterized2  |    87|
+|7     |      drawFailhole   |drawLayer__parameterized0  |    82|
+|8     |      drawWinhole    |drawLayer__parameterized1  |    68|
+|9     |    spriteAlphabuf   |sram__parameterized1       |     1|
+|10    |    spritebuf        |sram__parameterized0       |     2|
+|11    |    vram_a           |sram                       |    24|
+|12    |    vram_b           |sram_6                     |    36|
+|13    |  dropControl        |dropInHoles                |   710|
+|14    |    failHole1        |dropInSingleHole           |   141|
+|15    |    failHole2        |dropInSingleHole_1         |   100|
+|16    |    failHole3        |dropInSingleHole_2         |   101|
+|17    |    failHole4        |dropInSingleHole_3         |   102|
+|18    |    failHole5        |dropInSingleHole_4         |    99|
+|19    |    winHole          |dropInSingleHole_5         |   167|
+|20    |  getAccel           |myAccelerometerCtrl        |   160|
+|21    |  moveTheBall        |accelBallMove              |   354|
+|22    |    pos_x            |calculateX                 |    81|
+|23    |    pos_y            |calculateX__parameterized0 |    88|
+|24    |    vx               |calculateV                 |    36|
+|25    |    vy               |calculateV_0               |    36|
++------+---------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 1102.629 ; gain = 317.734
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1102.629 ; gain = 460.156
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 262 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1102.629 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+109 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 1102.629 ; gain = 718.391
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1102.629 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 10 20:17:13 2019...

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Dec  6 14:29:06 2019
+# Process ID: 12280
+# Current directory: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/ADXL362Control_0_synth_1
+# Command line: vivado.exe -log ADXL362Control_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ADXL362Control_0.tcl
+# Log file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/ADXL362Control_0_synth_1/ADXL362Control_0.vds
+# Journal file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/ADXL362Control_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ADXL362Control_0.tcl -notrace
