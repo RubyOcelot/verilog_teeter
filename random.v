@@ -5,7 +5,7 @@ module random #(parameter
     input i_clk,
     input i_rst,
     input [15:0]seed,
-    output [15:0]o_rand_value,
+    output [15:0]o_rand_value
 );
 
 reg [15:0] rand_value,rand_value_next;

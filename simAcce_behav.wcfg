@@ -3,65 +3,21 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="simtop_behav.wdb" id="1">
+      <db_ref path="simRandPos_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="simtop" />
+            <top_module name="simRandPos" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="49650000001fs"></ZoomEndTime>
+      <ZoomStartTime time="854000000fs"></ZoomStartTime>
+      <ZoomEndTime time="1000200001fs"></ZoomEndTime>
       <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="160"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="180"></NameColumnWidth>
+      <ValueColumnWidth column_width="138"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
-   <wvobject fp_name="/simtop/test1/CLK" type="logic">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/RST_BTN" type="logic">
-      <obj_property name="ElementShortName">RST_BTN</obj_property>
-      <obj_property name="ObjectShortName">RST_BTN</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/bl_x" type="array">
-      <obj_property name="ElementShortName">bl_x[9:0]</obj_property>
-      <obj_property name="ObjectShortName">bl_x[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/bl_y" type="array">
-      <obj_property name="ElementShortName">bl_y[9:0]</obj_property>
-      <obj_property name="ObjectShortName">bl_y[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/rolling_x" type="array">
-      <obj_property name="ElementShortName">rolling_x[9:0]</obj_property>
-      <obj_property name="ObjectShortName">rolling_x[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/rolling_y" type="array">
-      <obj_property name="ElementShortName">rolling_y[9:0]</obj_property>
-      <obj_property name="ObjectShortName">rolling_y[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/fix_x" type="array">
-      <obj_property name="ElementShortName">fix_x[9:0]</obj_property>
-      <obj_property name="ObjectShortName">fix_x[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/fix_y" type="array">
-      <obj_property name="ElementShortName">fix_y[9:0]</obj_property>
-      <obj_property name="ObjectShortName">fix_y[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/game_state" type="array">
-      <obj_property name="ElementShortName">game_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">game_state[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/moveTheBall/bl_x" type="array">
-      <obj_property name="ElementShortName">bl_x[9:0]</obj_property>
-      <obj_property name="ObjectShortName">bl_x[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/simtop/test1/moveTheBall/bl_y" type="array">
-      <obj_property name="ElementShortName">bl_y[9:0]</obj_property>
-      <obj_property name="ObjectShortName">bl_y[9:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>

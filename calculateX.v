@@ -12,13 +12,14 @@ module calculateX #(
     input i_rst2,
     input i_calc_time,
     input [31:0]i_velocity,
+    input [9:0]i_rst0_value,
     output [31:0]o_next_pos
 );
     reg [31:0]next_pos=RST0_VALUE<<POSITION_SHIFT;
     assign o_next_pos={{POSITION_SHIFT{next_pos[31]}},next_pos[31:POSITION_SHIFT]};
     always @(posedge CLK) begin
         if(i_rst0) begin
-            next_pos<=RST0_VALUE<<POSITION_SHIFT;
+            next_pos<=i_rst0_value<<POSITION_SHIFT;
         end
         else if(i_rst1) begin
             next_pos<=RST1_VALUE<<POSITION_SHIFT;

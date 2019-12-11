@@ -55,12 +55,28 @@ module top(
     //position of ball
     reg [9:0]bl_x=SPRITE_BL_X,bl_y=SPRITE_BL_Y;
     wire [9:0] rolling_x,rolling_y;
+    reg [9:0]bl_pos_initial_x=SPRITE_BL_X;
+    reg [9:0]bl_pos_initial_y=SPRITE_BL_Y;
     
-    //fail holes
-    localparam MAX_FAILHOLE_NUM=5;
+    // holes
+    localparam MAX_FAILHOLE_NUM=7;
     reg [9:0]wh_pos_x=10'd200,wh_pos_y=10'd100;
-    reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_x={10'd10,10'd50,10'd100,10'd200,10'd250};
-    reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_y={10'd130,10'd25,10'd140,10'd50,10'd70};
+    reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_x={10'd10,10'd50,10'd80,10'd100,10'd200,10'd250,10'd280};
+    reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_y={10'd130,10'd25,10'd140,10'd50,10'd100,10'd70,10'd10};
+    wire [20*(MAX_FAILHOLE_NUM+2)-1:0]rand_list;
+    wire rand_data_ready;
+
+    getRandPos #(
+        .MAX_NUM(9),
+        .POS_X_RANGE(SCREEN_WIDTH-SPRITE_SIZE),
+        .POS_Y_RANGE(SCREEN_HEIGHT-SPRITE_SIZE)
+        )
+        getAllPos(
+        .i_clk(CLK),
+        .i_rst(game_rst),
+        .o_rand_list(rand_list),
+        .o_data_ready(rand_data_ready)
+    );
 
     wire screenend;
     //vga controller
@@ -132,7 +148,9 @@ module top(
         .accel_y(accel_y[11:4]),
         .is_game_playing(is_game_playing),
         .bl_x(rolling_x),
-        .bl_y(rolling_y)
+        .bl_y(rolling_y),
+        .i_bl_pos_initial_x(bl_pos_initial_x),
+        .i_bl_pos_initial_y(bl_pos_initial_y)
     );
     
 
@@ -159,8 +177,11 @@ module top(
         .o_fail(playing_fail),
         .o_pos_fall_x(fix_x),
         .o_pos_fall_y(fix_y),
-        .o_fail_each(LED[4:0])
+        .i_bl_pos_initial_x(bl_pos_initial_x),
+        .i_bl_pos_initial_y(bl_pos_initial_y)
     );
+
+
 
 
     //game control state machine
@@ -171,36 +192,45 @@ module top(
     localparam GAME_RESETING=4'h4;
     localparam GAME_RST=GAME_RESETING;
 
-    reg [3:0] game_state=GAME_RST,game_state_next=GAME_RST;
+    reg [3:0] game_state=GAME_RST;
 
     always @(posedge CLK) begin
-        case (game_state)
-            GAME_RESETING: begin
-                game_state_next<=GAME_PLAYING;
-                /*
-                if(accel_data_ready)
-                    game_state_next<=GAME_PLAYING;
-                else
-                    game_state_next<=GAME_RESETING;*/
-            end
-            GAME_PLAYING: begin
-                if(playing_fail) 
-                    game_state_next<=GAME_FAIL;
-                else if(playing_win)
-                    game_state_next<=GAME_WIN;
-                else
-                    game_state_next<=GAME_PLAYING;
-            end
-            default: game_state_next<=game_state;
-        endcase
+        
     end
+
     always @ (posedge CLK)
     begin
         if(game_rst) begin
             game_state<=GAME_RST;
         end
         else begin
-            game_state<=game_state_next;
+            case (game_state)
+            GAME_RESETING: begin
+                //game_state<=GAME_PLAYING;
+                
+                //if(accel_data_ready&&rand_data_ready)begin
+                if(rand_data_ready)begin
+                    game_state<=GAME_PLAYING;
+                    fh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM)-1:0];
+                    wh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
+                    bl_pos_initial_x<=rand_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
+                    fh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
+                    wh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
+                    bl_pos_initial_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                end
+                else
+                    game_state<=GAME_RESETING;
+            end
+            GAME_PLAYING: begin
+                if(playing_fail) 
+                    game_state<=GAME_FAIL;
+                else if(playing_win)
+                    game_state<=GAME_WIN;
+                else
+                    game_state<=GAME_PLAYING;
+            end
+            default: game_state<=game_state;
+        endcase
         end
     end
 

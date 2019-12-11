@@ -1,6 +1,7 @@
 balance.cache/*
 balance.hw/*
 balance.ip_user_files/sim_scripts/*
-balance.sim
-balance.tmp
+balance.sim/*
+balance.tmp/*
 xgui
+balance.xpr

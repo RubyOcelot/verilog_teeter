@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Dec 10 22:07:01 2019
+| Date             : Wed Dec 11 13:58:31 2019
 | Host             : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.207        |
+| Total On-Chip Power (W)  | 0.244        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.108        |
+| Dynamic (W)              | 0.145        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.1         |
-| Junction Temperature (C) | 25.9         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.006 |     2277 |       --- |             --- |
-|   LUT as Logic |     0.005 |     1182 |     63400 |            1.86 |
-|   CARRY4       |     0.001 |      192 |     15850 |            1.21 |
-|   Register     |    <0.001 |      684 |    126800 |            0.54 |
-|   F7/F8 Muxes  |    <0.001 |       12 |     63400 |            0.02 |
-|   Others       |     0.000 |       72 |       --- |             --- |
-| Signals        |     0.013 |     3180 |       --- |             --- |
-| Block RAM      |     0.040 |     26.5 |       135 |           19.63 |
-| DSPs           |     0.029 |       43 |       240 |           17.92 |
-| I/O            |     0.015 |       37 |       210 |           17.62 |
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |     0.009 |     3272 |       --- |             --- |
+|   LUT as Logic |     0.007 |     1597 |     63400 |            2.52 |
+|   CARRY4       |     0.002 |      262 |     15850 |            1.65 |
+|   Register     |    <0.001 |     1081 |    126800 |            0.85 |
+|   F7/F8 Muxes  |    <0.001 |       46 |     63400 |            0.07 |
+|   Others       |     0.000 |       95 |       --- |             --- |
+| Signals        |     0.024 |     4579 |       --- |             --- |
+| Block RAM      |     0.039 |     26.5 |       135 |           19.63 |
+| DSPs           |     0.054 |       63 |       240 |           26.25 |
+| I/O            |     0.012 |       37 |       210 |           17.62 |
 | Static Power   |     0.099 |          |           |                 |
-| Total          |     0.207 |          |           |                 |
+| Total          |     0.244 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.105 |       0.089 |      0.016 |
-| Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
-| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
+| Vccint    |       1.000 |     0.145 |       0.129 |      0.016 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
+| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -140,27 +140,33 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------+-----------+
-| Name           | Power (W) |
-+----------------+-----------+
-| top            |     0.108 |
-|   drawScreen   |     0.046 |
-|     drawLayers |     0.004 |
-|       drawBall |     0.001 |
-|     spritebuf  |     0.004 |
-|     vram_a     |     0.018 |
-|     vram_b     |     0.018 |
-|   dropControl  |     0.041 |
-|     failHole1  |     0.007 |
-|     failHole2  |     0.006 |
-|     failHole3  |     0.006 |
-|     failHole4  |     0.007 |
-|     failHole5  |     0.007 |
-|     winHole    |     0.007 |
-|   getAccel     |     0.003 |
-|     getXY      |     0.003 |
-|       U0       |     0.003 |
-|   moveTheBall  |     0.002 |
-+----------------+-----------+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| top                  |     0.145 |
+|   drawScreen         |     0.047 |
+|     drawLayers       |     0.004 |
+|       drawBackground |     0.001 |
+|       drawBall       |     0.001 |
+|       drawFailhole   |     0.001 |
+|     spritebuf        |     0.004 |
+|     vram_a           |     0.018 |
+|     vram_b           |     0.018 |
+|   dropControl        |     0.070 |
+|     failHole1        |     0.009 |
+|     failHole2        |     0.008 |
+|     failHole3        |     0.009 |
+|     failHole4        |     0.008 |
+|     failHole5        |     0.009 |
+|     failHole6        |     0.008 |
+|     failHole7        |     0.009 |
+|     winHole          |     0.010 |
+|   getAccel           |     0.003 |
+|     getXY            |     0.002 |
+|       U0             |     0.002 |
+|   getAllPos          |     0.011 |
+|     genDecide        |     0.007 |
+|   moveTheBall        |     0.002 |
++----------------------+-----------+
 
 

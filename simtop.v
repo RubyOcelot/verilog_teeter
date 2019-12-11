@@ -6,7 +6,6 @@ top test1(
     .CLK(clk),
     .RST_BTN(rst),
     .GAME_RESTART_BTN(rst),
-    .sw(sw),
     .ACL_MISO(ACL_MISO)
 );
 initial begin

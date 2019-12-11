@@ -8,7 +8,7 @@ module layerControl #(parameter
     SPRITE_WH_OFFSET=0,
     SPRITE_BL_OFFSET=0,
     SPRITE_SIZE=32,
-    MAX_FAILHOLE_NUM=5
+    MAX_FAILHOLE_NUM=7
     )
     (
     input CLK,
@@ -218,6 +218,14 @@ module layerControl #(parameter
                 fh_pos_x=i_fh_pos_x[49:40];
                 fh_pos_y=i_fh_pos_y[49:40];
             end
+            4'h5: begin
+                fh_pos_x=i_fh_pos_x[59:50];
+                fh_pos_y=i_fh_pos_y[59:50];
+            end
+            4'h6: begin
+                fh_pos_x=i_fh_pos_x[69:60];
+                fh_pos_y=i_fh_pos_y[69:60];
+            end
             default: begin
                 fh_pos_x=0;
                 fh_pos_y=0;
@@ -239,7 +247,7 @@ module layerControl #(parameter
                 if(fh_sub_layer_end) begin
                     
                      //fh_cnt start with 0
-                    if(fh_cnt<4'h5) begin
+                    if(fh_cnt<MAX_FAILHOLE_NUM) begin
                         if(!new_layer) begin
                             fh_cnt<=fh_cnt+4'h1;
                             new_layer<=1'b1;

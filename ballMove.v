@@ -13,6 +13,8 @@ module accelBallMove #(
     input [7:0]accel_x,
     input [7:0]accel_y,
     input is_game_playing,
+    input [9:0]i_bl_pos_initial_x,
+    input [9:0]i_bl_pos_initial_y,
     output [9:0]bl_x,
     output [9:0]bl_y
 );
@@ -94,6 +96,7 @@ module accelBallMove #(
         .i_rst2(rst2_x),
         .i_calc_time(calc_time),
         .i_velocity(velocity_x),
+        .i_rst0_value(i_bl_pos_initial_x),
         .o_next_pos(next_pos_x)
     );
 
@@ -112,6 +115,7 @@ module accelBallMove #(
         .i_rst2(rst2_y),
         .i_calc_time(calc_time),
         .i_velocity(velocity_y),
+        .i_rst0_value(i_bl_pos_initial_y),
         .o_next_pos(next_pos_y)
     );
 
