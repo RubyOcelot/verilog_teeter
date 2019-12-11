@@ -125,8 +125,8 @@ module accelBallMove #(
     assign bl_y=bl_y_reg;
     always @(posedge CLK) begin
         if (rst) begin
-            bl_x_reg<=SPRITE_BL_X;
-            bl_y_reg<=SPRITE_BL_Y;
+            bl_x_reg<=i_bl_pos_initial_x;
+            bl_y_reg<=i_bl_pos_initial_y;
         end
         else begin
             bl_x_reg<=next_pos_x;

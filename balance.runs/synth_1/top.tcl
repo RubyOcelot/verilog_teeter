@@ -50,6 +50,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/random.v
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sig_clr.v
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sig_pulse.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/vga320x180.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v

@@ -1,7 +1,8 @@
 module top(
     input wire CLK,             // board clock: 100 MHz 
-    input wire RST_BTN,         // reset button
-    input wire GAME_RESTART_BTN,
+    input wire RST_BTN,         // btn centre
+    input wire NEW_GAME_BTN,    // btn up
+    input wire AGAIN_BTN,       // btn down
     input wire ACL_MISO,        // data from accelerometer
     output wire VGA_HS_O,       // horizontal sync output
     output wire VGA_VS_O,       // vertical sync output
@@ -14,9 +15,22 @@ module top(
     output [15:0]LED            //test
     );
 
-    wire rst = RST_BTN; 
-    wire game_rst;
-    assign game_rst=rst|GAME_RESTART_BTN;
+    wire rst,rst_clr; 
+    sig_clr rstClr(.i_clk(CLK),.i_sig(RST_BTN),.o_sig(rst_clr));
+    sig_pulse rstPulse(.i_clk(CLK),.i_sig(rst_clr),.o_sig(rst));
+
+    wire new_game_rst,new_game_clr,new_game_pulse;
+    sig_clr newGameClr(.i_clk(CLK),.i_sig(NEW_GAME_BTN),.o_sig(new_game_clr));
+    sig_pulse newGamePulse(.i_clk(CLK),.i_sig(new_game_clr),.o_sig(new_game_pulse));
+    assign new_game_rst=rst|new_game_pulse;
+
+    wire again_rst,again_clr,again_pulse;
+    sig_clr againClr(.i_clk(CLK),.i_sig(AGAIN_BTN),.o_sig(again_clr));
+    sig_pulse againPulse(.i_clk(CLK),.i_sig(again_clr),.o_sig(again_pulse));
+    assign again_rst=rst|new_game_rst|again_pulse;
+
+    wire rand_rst;
+    assign rand_rst=rst_clr|new_game_clr;
 
     // generate a 25 MHz pixel strobe
     reg [15:0] cnt=0;
@@ -73,7 +87,7 @@ module top(
         )
         getAllPos(
         .i_clk(CLK),
-        .i_rst(game_rst),
+        .i_rst(rand_rst),
         .o_rand_list(rand_list),
         .o_data_ready(rand_data_ready)
     );
@@ -132,7 +146,7 @@ module top(
 
     //move the ball
     
-    wire is_game_playing;
+    wire is_game_playing,bl_pos_rst;
     accelBallMove #(
         .SPRITE_BL_X(SPRITE_BL_X),
         .SPRITE_BL_Y(SPRITE_BL_Y),
@@ -142,7 +156,7 @@ module top(
         .PIXEL_COORD_BIT(PIXEL_COORD_BIT))
         moveTheBall(
         .CLK(CLK),
-        .rst(game_rst),
+        .rst(bl_pos_rst),
         .screenend(screenend),
         .accel_x(accel_x[11:4]),
         .accel_y(accel_y[11:4]),
@@ -165,7 +179,7 @@ module top(
         )
         dropControl(
         .i_clk(CLK),
-        .i_rst(game_rst),
+        .i_rst(again_rst),
         .is_game_playing(is_game_playing),
         .i_bl_x(bl_x),
         .i_bl_y(bl_y),
@@ -186,49 +200,60 @@ module top(
 
     //game control state machine
     localparam GAME_IDLE=4'h0;
+    localparam GAME_NEW=4'h4;
+    localparam GAME_BALL_RST=4'h6;
+    localparam GAME_AGAIN=4'h5;
     localparam GAME_PLAYING=4'h1;
     localparam GAME_FAIL=4'h2;
     localparam GAME_WIN=4'h3;
-    localparam GAME_RESETING=4'h4;
-    localparam GAME_RST=GAME_RESETING;
+    localparam GAME_RST=GAME_NEW;
 
     reg [3:0] game_state=GAME_RST;
 
-    always @(posedge CLK) begin
-        
-    end
 
     always @ (posedge CLK)
     begin
-        if(game_rst) begin
+        if(new_game_rst) begin
             game_state<=GAME_RST;
+        end
+        else if(again_rst) begin
+            game_state<=GAME_AGAIN;
         end
         else begin
             case (game_state)
-            GAME_RESETING: begin
-                //game_state<=GAME_PLAYING;
-                
-                //if(accel_data_ready&&rand_data_ready)begin
-                if(rand_data_ready)begin
-                    game_state<=GAME_PLAYING;
-                    fh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM)-1:0];
-                    wh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
-                    bl_pos_initial_x<=rand_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
-                    fh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
-                    wh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
-                    bl_pos_initial_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                GAME_NEW: begin
+                    //game_state<=GAME_PLAYING;
+                    
+                    if(accel_data_ready&&rand_data_ready)begin
+                    //if(rand_data_ready)begin
+                        game_state<=GAME_BALL_RST;
+                        fh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM)-1:0];
+                        wh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
+                        bl_pos_initial_x<=rand_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
+                        fh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
+                        wh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
+                        bl_pos_initial_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                    end
+                    else
+                        game_state<=GAME_NEW;
                 end
-                else
-                    game_state<=GAME_RESETING;
-            end
-            GAME_PLAYING: begin
-                if(playing_fail) 
-                    game_state<=GAME_FAIL;
-                else if(playing_win)
-                    game_state<=GAME_WIN;
-                else
+                GAME_BALL_RST:begin
+                    //if(rolling_x==bl_pos_initial_x&&rolling_y==bl_pos_initial_y)
+                        game_state<=GAME_PLAYING;
+                    //else 
+                    //    game_state<=GAME_BALL_RST;
+                end
+                GAME_AGAIN:begin
                     game_state<=GAME_PLAYING;
-            end
+                end
+                GAME_PLAYING: begin
+                    if(playing_fail) 
+                        game_state<=GAME_FAIL;
+                    else if(playing_win)
+                        game_state<=GAME_WIN;
+                    else
+                        game_state<=GAME_PLAYING;
+                end
             default: game_state<=game_state;
         endcase
         end
@@ -249,12 +274,13 @@ module top(
                 bl_y=fix_y;
             end
             default: begin
-                bl_x=SPRITE_BL_X;
-                bl_y=SPRITE_BL_Y;
+                bl_x=bl_pos_initial_x;
+                bl_y=bl_pos_initial_y;
             end
         endcase
     end
 
+    assign bl_pos_rst=(game_state==GAME_BALL_RST)|(game_state==GAME_AGAIN);
     assign is_game_playing=(game_state==GAME_PLAYING);
 
 

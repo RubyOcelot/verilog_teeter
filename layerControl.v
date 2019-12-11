@@ -35,62 +35,60 @@ module layerControl #(parameter
     localparam LAYER_RESETING=4'h5;
     localparam LAYER_RST=LAYER_IDLE;
 
-    reg [3:0] layer_state=LAYER_RESETING,layer_state_next=LAYER_RESETING;
+    reg [3:0] layer_state=LAYER_RESETING;
     wire bg_layer_end,wh_layer_end,bl_layer_end;
     reg fh_layer_end=0;
     
     //layer state machine
     always @(posedge CLK) begin
-        case(layer_state) 
-            LAYER_BACKGROUND: begin
-                if(bg_layer_end) layer_state_next<=LAYER_FAILHOLE;
-                else layer_state_next<=LAYER_BACKGROUND;
-            end
-            LAYER_FAILHOLE: begin
-                if (fh_layer_end) begin
-                    layer_state_next<=LAYER_WINHOLE;
-                end
-                else begin
-                    layer_state_next<=LAYER_FAILHOLE;
-                end
-            end
-            LAYER_WINHOLE: begin
-                if(wh_layer_end) begin
-                    layer_state_next<=LAYER_BALL;
-                end
-                else begin
-                    layer_state_next<=LAYER_WINHOLE;
-                end
-            end
-            LAYER_BALL: begin
-                if(bl_layer_end) begin
-                    layer_state_next<=LAYER_IDLE;
-                end
-                else
-                    layer_state_next<=LAYER_BALL;
-            end
-            LAYER_IDLE: begin
-                if(screenend)
-                    layer_state_next<=LAYER_RESETING;
-                else
-                    layer_state_next<=LAYER_IDLE;
-            end
-            LAYER_RESETING: begin
-                if(!bg_layer_end)
-                    layer_state_next<=LAYER_BACKGROUND;
-                else
-                    layer_state_next<=LAYER_RESETING;
-            end
-            default begin
-                layer_state_next<=LAYER_RST;
-            end
-        endcase
-    end
-    always @(posedge CLK) begin
         if (rst) begin
             layer_state<=LAYER_RST;
-        end else begin
-            layer_state<=layer_state_next;
+        end
+        else begin
+            case(layer_state) 
+                LAYER_BACKGROUND: begin
+                    if(bg_layer_end) layer_state<=LAYER_FAILHOLE;
+                    else layer_state<=LAYER_BACKGROUND;
+                end
+                LAYER_FAILHOLE: begin
+                    if (fh_layer_end) begin
+                        layer_state<=LAYER_WINHOLE;
+                    end
+                    else begin
+                        layer_state<=LAYER_FAILHOLE;
+                    end
+                end
+                LAYER_WINHOLE: begin
+                    if(wh_layer_end) begin
+                        layer_state<=LAYER_BALL;
+                    end
+                    else begin
+                        layer_state<=LAYER_WINHOLE;
+                    end
+                end
+                LAYER_BALL: begin
+                    if(bl_layer_end) begin
+                        layer_state<=LAYER_IDLE;
+                    end
+                    else
+                        layer_state<=LAYER_BALL;
+                end
+                LAYER_IDLE: begin
+                    if(screenend)
+                        layer_state<=LAYER_RESETING;
+                    else
+                        layer_state<=LAYER_IDLE;
+                end
+                LAYER_RESETING: begin
+                    if(!bg_layer_end)
+                        layer_state<=LAYER_BACKGROUND;
+                    else
+                        layer_state<=LAYER_RESETING;
+                end
+                default begin
+                    layer_state<=LAYER_RST;
+                end
+            endcase
         end
     end
     
