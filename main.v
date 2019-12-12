@@ -4,6 +4,7 @@ module top(
     input wire NEW_GAME_BTN,    // btn up
     input wire AGAIN_BTN,       // btn down
     input wire ACL_MISO,        // data from accelerometer
+    input theme_choose,
     output wire VGA_HS_O,       // horizontal sync output
     output wire VGA_VS_O,       // vertical sync output
     output [3:0] VGA_R,     // 4-bit VGA red output
@@ -53,16 +54,16 @@ module top(
     localparam SPRITE_COUNT = 8;  // number of sprites in buffer
     localparam SPRITEBUF_D_WIDTH = 8;  // colour bits per pixel
     localparam SPRITEBUF_DEPTH = SPRITE_SIZE * SPRITE_SIZE * SPRITE_COUNT;    
-    localparam SPRITEBUF_A_WIDTH = 13;  // 2^13 == 8,096 == 32 x 256 
+    localparam SPRITEBUF_A_WIDTH = 13;  // 2^13 == 8,096 == 32 x 256 =SPRITEBUF_DEPTH
 
     // sprites to load and position of player sprite in frame
     localparam SPRITE_BG_INDEX = 0;  // background sprite
     localparam SPRITE_BL_INDEX = 1;  // player sprite
     localparam SPRITE_FH_INDEX = 2;  // fail black hole
     localparam SPRITE_WH_INDEX = 3; // win green hole
-    localparam SPRITE_BG_OFFSET = SPRITE_BG_INDEX * SPRITE_SIZE * SPRITE_SIZE;
-    localparam SPRITE_BL_OFFSET = SPRITE_BL_INDEX * SPRITE_SIZE * SPRITE_SIZE;
-    localparam SPRITE_FH_OFFSET = SPRITE_FH_INDEX * SPRITE_SIZE * SPRITE_SIZE;
+//    localparam SPRITE_BG_OFFSET = SPRITE_BG_INDEX * SPRITE_SIZE * SPRITE_SIZE;
+//    localparam SPRITE_BL_OFFSET = SPRITE_BL_INDEX * SPRITE_SIZE * SPRITE_SIZE;
+//    localparam SPRITE_FH_OFFSET = SPRITE_FH_INDEX * SPRITE_SIZE * SPRITE_SIZE;
     localparam SPRITE_BL_X = (SCREEN_WIDTH - SPRITE_SIZE) >> 1;     // centre
     localparam SPRITE_BL_Y = (SCREEN_HEIGHT - SPRITE_SIZE) >>1;     // centre
 
@@ -120,6 +121,7 @@ module top(
         .i_wh_pos_y(wh_pos_y),
         .i_fh_pos_x(fh_pos_x),
         .i_fh_pos_y(fh_pos_y),
+        .theme_choose(theme_choose),
         .VGA_R(VGA_R),
         .VGA_G(VGA_G),
         .VGA_B(VGA_B),

@@ -1,6 +1,6 @@
 module calculateX #(
         parameter
-        POSITION_SHIFT=4,
+        POSITION_SHIFT=8,
         RST0_VALUE=50,
         RST1_VALUE=0,
         RST2_VALUE=100

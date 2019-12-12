@@ -3,21 +3,89 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="simRandPos_behav.wdb" id="1">
+      <db_ref path="simtop_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="simRandPos" />
+            <top_module name="simtop" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="854000000fs"></ZoomStartTime>
-      <ZoomEndTime time="1000200001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="30182800000fs"></ZoomStartTime>
+      <ZoomEndTime time="30341000001fs"></ZoomEndTime>
+      <Cursor1Time time="30298600000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="180"></NameColumnWidth>
-      <ValueColumnWidth column_width="138"></ValueColumnWidth>
+      <ValueColumnWidth column_width="133"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="0" />
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/simtop/test1/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rst_clr" type="logic">
+      <obj_property name="ElementShortName">rst_clr</obj_property>
+      <obj_property name="ObjectShortName">rst_clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/NEW_GAME_BTN" type="logic">
+      <obj_property name="ElementShortName">NEW_GAME_BTN</obj_property>
+      <obj_property name="ObjectShortName">NEW_GAME_BTN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/new_game_clr" type="logic">
+      <obj_property name="ElementShortName">new_game_clr</obj_property>
+      <obj_property name="ObjectShortName">new_game_clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/new_game_pulse" type="logic">
+      <obj_property name="ElementShortName">new_game_pulse</obj_property>
+      <obj_property name="ObjectShortName">new_game_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/new_game_rst" type="logic">
+      <obj_property name="ElementShortName">new_game_rst</obj_property>
+      <obj_property name="ObjectShortName">new_game_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/again_rst" type="logic">
+      <obj_property name="ElementShortName">again_rst</obj_property>
+      <obj_property name="ObjectShortName">again_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/game_state" type="array">
+      <obj_property name="ElementShortName">game_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">game_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/bl_x" type="array">
+      <obj_property name="ElementShortName">bl_x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">bl_x[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/bl_y" type="array">
+      <obj_property name="ElementShortName">bl_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">bl_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/bl_pos_initial_x" type="array">
+      <obj_property name="ElementShortName">bl_pos_initial_x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">bl_pos_initial_x[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/bl_pos_initial_y" type="array">
+      <obj_property name="ElementShortName">bl_pos_initial_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">bl_pos_initial_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rolling_x" type="array">
+      <obj_property name="ElementShortName">rolling_x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rolling_x[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rolling_y" type="array">
+      <obj_property name="ElementShortName">rolling_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rolling_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rand_data_ready" type="logic">
+      <obj_property name="ElementShortName">rand_data_ready</obj_property>
+      <obj_property name="ObjectShortName">rand_data_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/rand_list" type="array">
+      <obj_property name="ElementShortName">rand_list[179:0]</obj_property>
+      <obj_property name="ObjectShortName">rand_list[179:0]</obj_property>
+   </wvobject>
 </wave_config>

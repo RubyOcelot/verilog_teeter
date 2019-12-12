@@ -1,7 +1,7 @@
 module drawLayer #(
     PIX_WIDTH=0,
     PIX_HEIGHT=0,
-    SPRITE_OFFSET=0,
+    SPRITE_INDEX=0,
     SPRITE_SIZE=0,
     SPRITEBUF_A_WIDTH=13,
     SCREEN_WIDTH=0,
@@ -17,6 +17,7 @@ module drawLayer #(
     input i_layer_rst,
     input [9:0]screen_pos_x,    //left
     input [9:0]screen_pos_y,    //top
+    input theme_choose,
     output reg [SPRITEBUF_A_WIDTH-1:0]address_s,
     output [VRAM_A_WIDTH-1:0]address_screen,
     output [9:0]o_pix_x,
@@ -34,6 +35,8 @@ reg [VRAM_A_WIDTH-1:0] address_fb2;
 
 assign address_screen=address_fb2;
 assign o_layerend=(pix_y>=PIX_HEIGHT);
+
+
 
 always @ (posedge CLK)
 begin
@@ -62,8 +65,8 @@ begin
                     pix_y <= pix_y + 1;
                 end
                 // calculate address of sprite and frame buffer (with pipeline)
-                address_s <= SPRITE_OFFSET + 
-                            (SPRITE_SIZE * i_sprite_pix_y) + i_sprite_pix_x;
+                address_s <= (SPRITE_SIZE *2* (i_sprite_pix_y+SPRITE_SIZE*SPRITE_INDEX)) + 
+                                i_sprite_pix_x+SPRITE_SIZE*theme_choose;
                 address_fb1 <= SCREEN_WIDTH * (pix_y + screen_pos_y) + 
                             pix_x + screen_pos_x;
                 address_fb2 <= address_fb1;

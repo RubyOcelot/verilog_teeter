@@ -1,8 +1,8 @@
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
 |       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole1/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole7/conflict_reg/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole4/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole5/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                        getAllPos/genDecide/conflict_reg/D|
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

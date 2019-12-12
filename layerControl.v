@@ -3,10 +3,10 @@ module layerControl #(parameter
     SPRITEBUF_A_WIDTH=0,
     SCREEN_WIDTH=320,
     SCREEN_HEIGHT=180,
-    SPRITE_BG_OFFSET=0,
-    SPRITE_FH_OFFSET=0,
-    SPRITE_WH_OFFSET=0,
-    SPRITE_BL_OFFSET=0,
+    SPRITE_BG_INDEX=0,
+    SPRITE_FH_INDEX=2,
+    SPRITE_WH_INDEX=3,
+    SPRITE_BL_INDEX=1,
     SPRITE_SIZE=32,
     MAX_FAILHOLE_NUM=7
     )
@@ -21,6 +21,7 @@ module layerControl #(parameter
     input [9:0]i_wh_pos_y,
     input [10*(MAX_FAILHOLE_NUM)-1:0]i_fh_pos_x,
     input [10*(MAX_FAILHOLE_NUM)-1:0]i_fh_pos_y,
+    input theme_choose,
     output [VRAM_A_WIDTH-1:0] o_address_screen,
     output [SPRITEBUF_A_WIDTH-1:0] o_address_s,
     output o_is_layer_drawing,
@@ -161,7 +162,7 @@ module layerControl #(parameter
     drawLayer #(
         .PIX_WIDTH(SCREEN_WIDTH+1),
         .PIX_HEIGHT(SCREEN_HEIGHT),
-        .SPRITE_OFFSET(SPRITE_BG_OFFSET),
+        .SPRITE_INDEX(SPRITE_BG_INDEX),
         .SPRITE_SIZE(SPRITE_SIZE),
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SCREEN_WIDTH(SCREEN_WIDTH),
@@ -175,6 +176,7 @@ module layerControl #(parameter
         .i_sprite_pix_x(bg_pix_x_mod),
         .i_sprite_pix_y(bg_pix_y_mod),
         .i_layer_rst(new_frame),
+        .theme_choose(theme_choose),
         
         .screen_pos_x(bg_pos_x),
         .screen_pos_y(bg_pos_y),
@@ -268,7 +270,7 @@ module layerControl #(parameter
     drawLayer #(
         .PIX_WIDTH(SPRITE_SIZE),
         .PIX_HEIGHT(SPRITE_SIZE),
-        .SPRITE_OFFSET(SPRITE_FH_OFFSET),
+        .SPRITE_INDEX(SPRITE_FH_INDEX),
         .SPRITE_SIZE(SPRITE_SIZE),
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SCREEN_WIDTH(SCREEN_WIDTH),
@@ -282,6 +284,7 @@ module layerControl #(parameter
         .i_sprite_pix_x(fh_pix_x),
         .i_sprite_pix_y(fh_pix_y),
         .i_layer_rst(new_layer),
+        .theme_choose(theme_choose),
         .screen_pos_x(fh_pos_x),
         .screen_pos_y(fh_pos_y),
         .address_s(fh_address_s),
@@ -298,7 +301,7 @@ module layerControl #(parameter
     drawLayer #(
         .PIX_WIDTH(SPRITE_SIZE),
         .PIX_HEIGHT(SPRITE_SIZE),
-        .SPRITE_OFFSET(SPRITE_WH_OFFSET),
+        .SPRITE_INDEX(SPRITE_WH_INDEX),
         .SPRITE_SIZE(SPRITE_SIZE),
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SCREEN_WIDTH(SCREEN_WIDTH),
@@ -312,6 +315,7 @@ module layerControl #(parameter
         .i_sprite_pix_x(wh_pix_x),
         .i_sprite_pix_y(wh_pix_y),
         .i_layer_rst(new_frame),
+        .theme_choose(theme_choose),
         
         .screen_pos_x(i_wh_pos_x),
         .screen_pos_y(i_wh_pos_y),
@@ -326,7 +330,7 @@ module layerControl #(parameter
     drawLayer #(
         .PIX_WIDTH(SPRITE_SIZE),
         .PIX_HEIGHT(SPRITE_SIZE),
-        .SPRITE_OFFSET(SPRITE_BL_OFFSET),
+        .SPRITE_INDEX(SPRITE_BL_INDEX),
         .SPRITE_SIZE(SPRITE_SIZE),
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SCREEN_WIDTH(SCREEN_WIDTH),
@@ -340,6 +344,7 @@ module layerControl #(parameter
         .i_sprite_pix_x(bl_pix_x),
         .i_sprite_pix_y(bl_pix_y),
         .i_layer_rst(new_frame),
+        .theme_choose(theme_choose),
         
         .screen_pos_x(bl_x),
         .screen_pos_y(bl_y),

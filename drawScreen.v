@@ -5,8 +5,8 @@ module drawScreenCtrl #(parameter
     SCREEN_WIDTH=320,
     SCREEN_HEIGHT=180,
     SPRITE_SIZE=32,
-    SPRITE_BL_INDEX=1,
     SPRITE_BG_INDEX=0,
+    SPRITE_BL_INDEX=1,
     SPRITE_FH_INDEX=2,
     SPRITE_WH_INDEX=3,
     SPRITEBUF_A_WIDTH=13,
@@ -22,6 +22,7 @@ module drawScreenCtrl #(parameter
     input [9:0]bl_y,
     input [9:0]i_wh_pos_x,
     input [9:0]i_wh_pos_y,
+    input theme_choose,
     input [10*(MAX_FAILHOLE_NUM)-1:0]i_fh_pos_x,
     input [10*(MAX_FAILHOLE_NUM)-1:0]i_fh_pos_y,
     output [3:0]VGA_R,
@@ -32,10 +33,11 @@ module drawScreenCtrl #(parameter
     output o_screenend,
     output [10:0]o_led
 );
+/*
     localparam SPRITE_BL_OFFSET=SPRITE_BL_INDEX*SPRITE_SIZE*SPRITE_SIZE;
     localparam SPRITE_BG_OFFSET=SPRITE_BG_INDEX*SPRITE_SIZE*SPRITE_SIZE;
     localparam SPRITE_FH_OFFSET=SPRITE_FH_INDEX*SPRITE_SIZE*SPRITE_SIZE;
-    localparam SPRITE_WH_OFFSET=SPRITE_WH_INDEX*SPRITE_SIZE*SPRITE_SIZE;
+    localparam SPRITE_WH_OFFSET=SPRITE_WH_INDEX*SPRITE_SIZE*SPRITE_SIZE;*/
 
     wire [9:0] x;       // current pixel x position: 10-bit value: 0-1023
     wire [8:0] y;       // current pixel y position:  9-bit value: 0-511
@@ -100,12 +102,14 @@ module drawScreenCtrl #(parameter
     wire [SPRITEBUF_D_WIDTH-1:0] dataout_s;
     wire [VRAM_A_WIDTH-1:0] address_screen;
 
+   
+
     // sprite buffer memory
     sram #(
         .ADDR_WIDTH(SPRITEBUF_A_WIDTH), 
         .DATA_WIDTH(SPRITEBUF_D_WIDTH), 
         .DEPTH(SPRITEBUF_DEPTH), 
-        .MEMFILE("balance.mem"))
+        .MEMFILE("balance2.mem"))
         spritebuf (
         .i_addr(address_s), 
         .i_clk(CLK), 
@@ -118,8 +122,9 @@ module drawScreenCtrl #(parameter
     reg [11:0] colour;
     initial begin
         $display("Loading palette.");
-        $readmemh("balance_palette.mem", palette);
+        $readmemh("balance2_palette.mem", palette);
     end
+
 
     wire dataout_alpha;        
     //sprite alpha buffer memory
@@ -127,7 +132,7 @@ module drawScreenCtrl #(parameter
         .ADDR_WIDTH(SPRITEBUF_A_WIDTH), 
         .DATA_WIDTH(1), 
         .DEPTH(SPRITEBUF_DEPTH), 
-        .MEMFILE("balance_alpha.mem"))
+        .MEMFILE("balance2_alpha.mem"))
         spriteAlphabuf (
         .i_addr(address_s), 
         .i_clk(CLK), 
@@ -142,10 +147,10 @@ module drawScreenCtrl #(parameter
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SCREEN_WIDTH(SCREEN_WIDTH),
         .SCREEN_HEIGHT(SCREEN_HEIGHT),
-        .SPRITE_BG_OFFSET(SPRITE_BG_OFFSET),
-        .SPRITE_FH_OFFSET(SPRITE_FH_OFFSET),
-        .SPRITE_WH_OFFSET(SPRITE_WH_OFFSET),
-        .SPRITE_BL_OFFSET(SPRITE_BL_OFFSET),
+        .SPRITE_BG_INDEX(SPRITE_BG_INDEX),
+        .SPRITE_FH_INDEX(SPRITE_FH_INDEX),
+        .SPRITE_WH_INDEX(SPRITE_WH_INDEX),
+        .SPRITE_BL_INDEX(SPRITE_BL_INDEX),
         .SPRITE_SIZE(SPRITE_SIZE),
         .MAX_FAILHOLE_NUM(MAX_FAILHOLE_NUM)
         )
@@ -160,6 +165,7 @@ module drawScreenCtrl #(parameter
         .i_wh_pos_y(i_wh_pos_y),
         .i_fh_pos_x(i_fh_pos_x),
         .i_fh_pos_y(i_fh_pos_y),
+        .theme_choose(theme_choose),
         .o_address_screen(address_screen),
         .o_address_s(address_s),
         .o_is_layer_drawing(is_layer_drawing),

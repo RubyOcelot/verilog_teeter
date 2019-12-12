@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,6 +38,9 @@ read_mem {
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance.mem
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance_palette.mem
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance_alpha.mem
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2.mem
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2_palette.mem
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2_alpha.mem
 }
 read_verilog -library xil_defaultlib {
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v

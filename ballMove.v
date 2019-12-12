@@ -19,18 +19,20 @@ module accelBallMove #(
     output [9:0]bl_y
 );
     localparam SCREEN_FREQUNCY=60;       //hz
-    localparam GRAVITY=98;               //dm/s^2
-    localparam SCREEN_WIDTH_DM=4;           //dm
-    localparam VELOCITY_SHIFT_BIT=8;
-    localparam integer VELOCITY_CONST=($ceil(((GRAVITY*SCREEN_WIDTH)<<VELOCITY_SHIFT_BIT)/(SCREEN_FREQUNCY*SCREEN_FREQUNCY*SCREEN_WIDTH_DM)))/32;
+    localparam GRAVITY=980;               //cm/s^2
+    localparam SCREEN_WIDTH_DM=44;           //cm
+    localparam VELOCITY_SHIFT=8;
+    localparam POSITION_SHIFT=8;
     localparam ACCEL_WIDTH=8;
+    localparam integer VELOCITY_CONST=($ceil( 100000000/($sqrt( (GRAVITY*SCREEN_WIDTH/SCREEN_WIDTH_DM)<<(VELOCITY_SHIFT+POSITION_SHIFT-(ACCEL_WIDTH-2)) )) ));
     localparam DELTA_VELOCITY_BIT=32;
     localparam VELOCITY_BIT=32;
     localparam ARITH_BIT_WIDTH=32;
 
     //calculation clock
     reg [17:0]calc_cnt=0;
-    localparam CALC_CNT=70587>>1;
+    //localparam CALC_CNT=70587>>1;
+    localparam integer CALC_CNT=VELOCITY_CONST*1.2;
     always @(posedge CLK) begin
         if(rst)
             calc_cnt<=0;
@@ -52,8 +54,6 @@ module accelBallMove #(
     wire rst1_x,rst2_x,rst1_y,rst2_y;
     assign rst_vx=rst|rst1_x|rst2_x;
     assign rst_vy=rst|rst1_y|rst2_y;
-    localparam VELOCITY_SHIFT=8;
-    localparam POSITION_SHIFT=8;
     calculateV  #(
         .VELOCITY_SHIFT(VELOCITY_SHIFT)
         )
