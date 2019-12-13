@@ -12,7 +12,7 @@ module accelBallMove #(
     input screenend,
     input [7:0]accel_x,
     input [7:0]accel_y,
-    input is_game_playing,
+    input is_ball_moving,
     input [9:0]i_bl_pos_initial_x,
     input [9:0]i_bl_pos_initial_y,
     output [9:0]bl_x,
@@ -36,7 +36,7 @@ module accelBallMove #(
     always @(posedge CLK) begin
         if(rst)
             calc_cnt<=0;
-        else if(is_game_playing) begin
+        else if(is_ball_moving) begin
             if(calc_cnt>=CALC_CNT-1) begin
                 calc_cnt<=0;
             end

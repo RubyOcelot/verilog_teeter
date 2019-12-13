@@ -6,6 +6,7 @@ module getRandPos #(parameter
     (
     input i_clk,
     input i_rst,
+    input [15:0]rand_seed,
     output reg [MAX_NUM*20-1:0]o_rand_list,
     output o_data_ready
 );
@@ -31,12 +32,13 @@ reg [9:0]x_deciding,y_deciding;
 assign o_data_ready=(gen_pos_state==GEN_DATA_READY);
 
 always @(posedge i_clk) begin
+/*
     if(i_rst)begin
         rand_seed_cnt <=rand_seed_cnt + 1;
     end
     else begin
 
-    end
+    end*/
 end
 
 random #(
@@ -45,7 +47,7 @@ random #(
     randomX(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .seed(rand_seed_cnt),
+    .seed(rand_seed),
     .o_rand_value(rand_x)
 );
 
@@ -55,7 +57,7 @@ random #(
     randomY(
     .i_clk(i_clk),
     .i_rst(i_rst),
-    .seed(rand_seed_cnt),
+    .seed(rand_seed),
     .o_rand_value(rand_y)
 );
 

@@ -23,8 +23,8 @@ module vga320x180(
     localparam LINE   = 800;             // complete line (pixels)
     localparam SCREEN = 525;             // complete screen (lines)
 
-    reg [9:0] h_count;      // line position
-    reg [9:0] v_count;      // screen position
+    reg [9:0] h_count=0;      // line position
+    reg [9:0] v_count=0;      // screen position
 
     // generate sync signals (active low for 640x480)
     assign o_hs = ~((h_count >= HS_STA) & (h_count < HS_END));

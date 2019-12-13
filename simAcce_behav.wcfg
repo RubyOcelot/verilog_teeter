@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="30182800000fs"></ZoomStartTime>
-      <ZoomEndTime time="30341000001fs"></ZoomEndTime>
-      <Cursor1Time time="30298600000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="943000000001fs"></ZoomEndTime>
+      <Cursor1Time time="623000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="180"></NameColumnWidth>
-      <ValueColumnWidth column_width="133"></ValueColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="25" />
    <wvobject fp_name="/simtop/test1/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -32,9 +32,41 @@
       <obj_property name="ElementShortName">rst_clr</obj_property>
       <obj_property name="ObjectShortName">rst_clr</obj_property>
    </wvobject>
-   <wvobject fp_name="/simtop/test1/NEW_GAME_BTN" type="logic">
-      <obj_property name="ElementShortName">NEW_GAME_BTN</obj_property>
-      <obj_property name="ObjectShortName">NEW_GAME_BTN</obj_property>
+   <wvobject fp_name="/simtop/test1/up_btn" type="logic">
+      <obj_property name="ElementShortName">up_btn</obj_property>
+      <obj_property name="ObjectShortName">up_btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/down_btn" type="logic">
+      <obj_property name="ElementShortName">down_btn</obj_property>
+      <obj_property name="ObjectShortName">down_btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/max_option" type="array">
+      <obj_property name="ElementShortName">max_option[2:0]</obj_property>
+      <obj_property name="ObjectShortName">max_option[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/select_pos" type="array">
+      <obj_property name="ElementShortName">select_pos[2:0]</obj_property>
+      <obj_property name="ObjectShortName">select_pos[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/drawScreen/drawLayers/select_offset" type="array">
+      <obj_property name="ElementShortName">select_offset[9:0]</obj_property>
+      <obj_property name="ObjectShortName">select_offset[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/drawScreen/drawLayers/layer_state" type="array">
+      <obj_property name="ElementShortName">layer_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">layer_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/drawScreen/drawLayers/bg_layer_end" type="logic">
+      <obj_property name="ElementShortName">bg_layer_end</obj_property>
+      <obj_property name="ObjectShortName">bg_layer_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/drawScreen/drawLayers/screenend" type="logic">
+      <obj_property name="ElementShortName">screenend</obj_property>
+      <obj_property name="ObjectShortName">screenend</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simtop/test1/drawScreen/drawLayers/is_game_start_menu" type="logic">
+      <obj_property name="ElementShortName">is_game_start_menu</obj_property>
+      <obj_property name="ObjectShortName">is_game_start_menu</obj_property>
    </wvobject>
    <wvobject fp_name="/simtop/test1/new_game_clr" type="logic">
       <obj_property name="ElementShortName">new_game_clr</obj_property>
