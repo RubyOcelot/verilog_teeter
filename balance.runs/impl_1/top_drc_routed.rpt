@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Dec 13 21:18:53 2019
+| Date         : Fri Dec 13 22:28:24 2019
 | Host         : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -24,16 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 234
+             Violations found: 232
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | DPIP-1   | Warning  | Input pipelining                                    | 117        |
-| DPOP-1   | Warning  | PREG Output pipelining                              | 56         |
+| DPOP-1   | Warning  | PREG Output pipelining                              | 55         |
 | DPOP-2   | Warning  | MREG Output pipelining                              | 57         |
 | IOSR-1   | Warning  | IOB set reset sharing                               | 1          |
-| REQP-31  | Advisory | enum_PREG_0_connects_CEP_GND                        | 2          |
+| REQP-31  | Advisory | enum_PREG_0_connects_CEP_GND                        | 1          |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -911,11 +911,6 @@ PREG Output pipelining
 DSP getAllPos/x_deciding_reg output getAllPos/x_deciding_reg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
-DPOP-1#56 Warning
-PREG Output pipelining  
-DSP getAllPos/y_deciding_reg output getAllPos/y_deciding_reg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
 DPOP-2#1 Warning
 MREG Output pipelining  
 DSP drawScreen/drawLayers/drawBackground/address_fb1_reg multiplier stage drawScreen/drawLayers/drawBackground/address_fb1_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
@@ -1203,17 +1198,12 @@ Related violations: <none>
 
 IOSR-1#1 Warning
 IOB set reset sharing  
-IO theme_choose connects to flops which have these rstPulse/r2_reg_1, rstPulse/SR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+IO theme_choose connects to flops which have these rstPulse/SR[0], rstPulse/r2_reg_1 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 REQP-31#1 Advisory
 enum_PREG_0_connects_CEP_GND  
 getAllPos/x_deciding_reg: When the DSP48E1 PREG attribute is set to 0, the CEP input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-31#2 Advisory
-enum_PREG_0_connects_CEP_GND  
-getAllPos/y_deciding_reg: When the DSP48E1 PREG attribute is set to 0, the CEP input pin should be tied to GND to save power.
 Related violations: <none>
 
 

@@ -2,9 +2,11 @@
 |       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
 |              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole3/conflict_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole4/conflict_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole2/conflict_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole1/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole5/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                        dropControl/winHole/conflict_reg/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole4/conflict_reg/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole6/conflict_reg/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                      dropControl/failHole2/conflict_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                        getAllPos/genDecide/conflict_reg/D|
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

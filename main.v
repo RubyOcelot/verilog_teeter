@@ -464,42 +464,48 @@ module top(
                         game_state<=GAME_FAIL;
                 end
                 GAME_WIN: begin
-                    if(ok_btn)begin
-                        if(game_mode==ENDLESS) begin
-                            case(select_pos)
-                                3'h0: begin
-                                    game_state<=GAME_AGAIN;
-                                end
-                                3'h1: begin
-                                    game_state<=GAME_NEW_RST;
-                                end
-                                default: begin
-                                    game_state<=GAME_WIN;
-                                end
-                            endcase
-                        end
-                        else begin
-                            case(select_pos)
-                                3'h0: begin
-                                    game_state<=GAME_AGAIN;
-                                end
-                                3'h1: begin
-                                    if(level_cnt<4'h9) begin
-                                        level_cnt<=level_cnt+4'h1;
+                    if(game_mode==CLASSIC&&level_cnt>=4'h9) begin
+                            game_state<=GAME_FINISH;
+                        
+                    end
+                    else begin
+                        if(ok_btn)begin
+                            if(game_mode==ENDLESS) begin
+                                case(select_pos)
+                                    3'h0: begin
+                                        game_state<=GAME_AGAIN;
+                                    end
+                                    3'h1: begin
                                         game_state<=GAME_NEW_RST;
                                     end
-                                    else
-                                        game_state<=GAME_FINISH;
-                                end
-                                default: begin
-                                    game_state<=GAME_WIN;
-                                end
-                            endcase
+                                    default: begin
+                                        game_state<=GAME_WIN;
+                                    end
+                                endcase
+                            end
+                            else begin
+                                case(select_pos)
+                                    3'h0: begin
+                                        game_state<=GAME_AGAIN;
+                                    end
+                                    3'h1: begin
+                                        if(level_cnt<4'h9) begin
+                                            level_cnt<=level_cnt+4'h1;
+                                            game_state<=GAME_NEW_RST;
+                                        end
+                                        else
+                                            game_state<=GAME_FINISH;
+                                    end
+                                    default: begin
+                                        game_state<=GAME_WIN;
+                                    end
+                                endcase
 
+                            end
                         end
+                        else
+                            game_state<=GAME_WIN;
                     end
-                    else
-                        game_state<=GAME_WIN;
                 end
                 GAME_FINISH: begin
                     if(ok_btn)begin
@@ -540,6 +546,10 @@ module top(
             GAME_START_MENU: begin
                 bl_x=rolling_x;
                 bl_y=rolling_y;
+            end
+            GAME_FINISH: begin
+                bl_x=fix_x;
+                bl_y=fix_y;
             end
             default: begin
                 bl_x=bl_pos_initial_x;

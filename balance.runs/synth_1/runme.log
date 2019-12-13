@@ -18,7 +18,7 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16704 
+INFO: Helper process launched with PID 16716 
 WARNING: [Synth 8-992] game_mode is already implicitly declared earlier [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:260]
 WARNING: [Synth 8-6901] identifier 'game_state' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:132]
 WARNING: [Synth 8-6901] identifier 'GAME_START_MENU' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:133]
@@ -33,7 +33,7 @@ WARNING: [Synth 8-6901] identifier 'GAME_WIN' is used before its declaration [C:
 WARNING: [Synth 8-6901] identifier 'GAME_FAIL' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:275]
 WARNING: [Synth 8-6901] identifier 'GAME_FINISH' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:281]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 823.176 ; gain = 181.789
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 823.422 ; gain = 182.305
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
 	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
@@ -215,8 +215,8 @@ INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized0' (8#1) 
 INFO: [Synth 8-6155] done synthesizing module 'layerControl' (9#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'drawScreenCtrl' (10#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:1]
 INFO: [Synth 8-6157] synthesizing module 'myAccelerometerCtrl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-16088-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-16088-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-9692-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-9692-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'myAccelerometerCtrl' (12#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
 INFO: [Synth 8-6157] synthesizing module 'accelBallMove' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v:1]
 	Parameter SPRITE_BL_X bound to: 144 - type: integer 
@@ -286,7 +286,7 @@ WARNING: [Synth 8-3331] design top has unconnected port level_choose[2]
 WARNING: [Synth 8-3331] design top has unconnected port level_choose[1]
 WARNING: [Synth 8-3331] design top has unconnected port level_choose[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 899.906 ; gain = 258.520
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 899.871 ; gain = 258.754
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -299,10 +299,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 899.906 ; gain = 258.520
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 899.871 ; gain = 258.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 899.906 ; gain = 258.520
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 899.871 ; gain = 258.754
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -316,27 +316,27 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1039.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1038.426 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1039.469 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1038.426 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1038.426 ; gain = 397.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1038.426 ; gain = 397.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for getAccel/getXY. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1038.426 ; gain = 397.309
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'layer_state_reg' in module 'layerControl'
 INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'top'
@@ -362,19 +362,19 @@ INFO: [Synth 8-3354] encoded FSM with state register 'layer_state_reg' using enc
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
          GAME_START_MENU |                             1001 |                             0000
-            GAME_NEW_RST |                             0100 |                             1000
+            GAME_NEW_RST |                             0101 |                             1000
                 GAME_NEW |                             0000 |                             0100
            GAME_BALL_RST |                             0001 |                             0110
             GAME_PLAYING |                             0111 |                             0001
                GAME_FAIL |                             0110 |                             0010
                 GAME_WIN |                             0010 |                             0011
-             GAME_FINISH |                             0101 |                             1001
+             GAME_FINISH |                             0011 |                             1001
               GAME_PAUSE |                             1000 |                             0111
-              GAME_AGAIN |                             0011 |                             0101
+              GAME_AGAIN |                             0100 |                             0101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1039.469 ; gain = 398.082
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 1038.426 ; gain = 397.309
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -435,10 +435,10 @@ Detailed RTL Component Info :
 	   2 Input     12 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 25    
 	  10 Input     10 Bit        Muxes := 1     
-	   6 Input     10 Bit        Muxes := 2     
+	   7 Input     10 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
 	   8 Input      4 Bit        Muxes := 2     
-	  39 Input      4 Bit        Muxes := 1     
+	  40 Input      4 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 3     
 	   6 Input      3 Bit        Muxes := 1     
@@ -471,8 +471,8 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     70 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 4     
-	   6 Input     10 Bit        Muxes := 2     
-	  39 Input      4 Bit        Muxes := 1     
+	   7 Input     10 Bit        Muxes := 2     
+	  40 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
@@ -1011,66 +1011,66 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScree
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawWinhole/address_s_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawHeading1/address_s_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawBall/address_s_reg[14] )
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[79]' (FDE) to 'getAllPos/o_rand_list_reg[168]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[9]' (FDE) to 'getAllPos/o_rand_list_reg[98]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[19]' (FDE) to 'getAllPos/o_rand_list_reg[108]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[29]' (FDE) to 'getAllPos/o_rand_list_reg[118]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[39]' (FDE) to 'getAllPos/o_rand_list_reg[128]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[49]' (FDE) to 'getAllPos/o_rand_list_reg[138]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[59]' (FDE) to 'getAllPos/o_rand_list_reg[148]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[69]' (FDE) to 'getAllPos/o_rand_list_reg[158]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[89]' (FDE) to 'getAllPos/o_rand_list_reg[178]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[79]' (FDE) to 'getAllPos/o_rand_list_reg[168]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[69]' (FDE) to 'getAllPos/o_rand_list_reg[158]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[168]' (FDE) to 'getAllPos/o_rand_list_reg[169]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[98]' (FDE) to 'getAllPos/o_rand_list_reg[99]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[108]' (FDE) to 'getAllPos/o_rand_list_reg[109]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[118]' (FDE) to 'getAllPos/o_rand_list_reg[119]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[128]' (FDE) to 'getAllPos/o_rand_list_reg[129]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[138]' (FDE) to 'getAllPos/o_rand_list_reg[139]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[148]' (FDE) to 'getAllPos/o_rand_list_reg[149]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[158]' (FDE) to 'getAllPos/o_rand_list_reg[159]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[178]' (FDE) to 'getAllPos/o_rand_list_reg[179]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[168]' (FDE) to 'getAllPos/o_rand_list_reg[169]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[158]' (FDE) to 'getAllPos/o_rand_list_reg[159]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[169] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[99] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[109] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[119] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[129] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[139] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[149] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[159] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[179] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[169] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[159] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\gen_pos_state_reg[3] )
 INFO: [Synth 8-3886] merging instance 'getAllPos/x_succeeded_reg[9]' (FDE) to 'getAllPos/y_succeeded_reg[8]'
 INFO: [Synth 8-3886] merging instance 'getAllPos/y_succeeded_reg[8]' (FDE) to 'getAllPos/y_succeeded_reg[9]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\y_succeeded_reg[9] )
+INFO: [Synth 8-3886] merging instance 'wh_pos_x_reg[9]' (FDE) to 'fh_pos_x_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[9]' (FDE) to 'fh_pos_x_reg[19]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[19]' (FDE) to 'fh_pos_x_reg[29]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[29]' (FDE) to 'fh_pos_x_reg[39]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[39]' (FDE) to 'fh_pos_x_reg[49]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[49]' (FDE) to 'fh_pos_x_reg[59]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[59]' (FDE) to 'fh_pos_x_reg[69]'
-INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[69]' (FDE) to 'wh_pos_x_reg[9]'
-INFO: [Synth 8-3886] merging instance 'bl_pos_initial_x_reg[9]' (FDE) to 'wh_pos_x_reg[9]'
-INFO: [Synth 8-3886] merging instance 'wh_pos_x_reg[9]' (FDE) to 'bl_pos_initial_y_reg[8]'
+INFO: [Synth 8-3886] merging instance 'bl_pos_initial_x_reg[9]' (FDE) to 'fh_pos_x_reg[69]'
+INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[69]' (FDE) to 'bl_pos_initial_y_reg[8]'
+INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[18]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[28]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[38]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[48]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[58]' (FDE) to 'bl_pos_initial_y_reg[8]'
-INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[68]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[9]'
+INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[68]' (FDE) to 'bl_pos_initial_y_reg[9]'
+INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[9]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[9]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[19]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[29]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[39]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[49]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[59]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[69]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[9]' (FDE) to 'wh_pos_y_reg[9]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\wh_pos_y_reg[9] )
+INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[9]' (FDE) to 'fh_pos_y_reg[69]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fh_pos_y_reg[69] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1039.469 ; gain = 398.082
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1038.426 ; gain = 397.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1227,13 +1227,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1084.262 ; gain = 442.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 1082.945 ; gain = 441.828
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1128.184 ; gain = 486.797
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:27 . Memory (MB): peak = 1127.137 ; gain = 486.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1281,7 +1281,7 @@ INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_arr
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_array_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1146.582 ; gain = 505.195
+Finished Technology Mapping : Time (s): cpu = 00:01:24 ; elapsed = 00:01:36 . Memory (MB): peak = 1145.086 ; gain = 503.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1305,7 +1305,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1147.984 ; gain = 506.598
+Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:41 . Memory (MB): peak = 1146.492 ; gain = 505.375
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1318,7 +1318,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1147.984 ; gain = 506.598
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:29 ; elapsed = 00:01:41 . Memory (MB): peak = 1146.492 ; gain = 505.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1330,25 +1330,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1147.984 ; gain = 506.598
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:34 ; elapsed = 00:01:47 . Memory (MB): peak = 1146.492 ; gain = 505.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1147.984 ; gain = 506.598
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:34 ; elapsed = 00:01:47 . Memory (MB): peak = 1146.492 ; gain = 505.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:35 ; elapsed = 00:01:48 . Memory (MB): peak = 1150.473 ; gain = 509.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:35 ; elapsed = 00:01:48 . Memory (MB): peak = 1150.473 ; gain = 509.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1374,11 +1374,11 @@ Report Cell Usage:
 |7     |DSP48E1_4        |     7|
 |8     |DSP48E1_5        |     2|
 |9     |LUT1             |    53|
-|10    |LUT2             |   698|
-|11    |LUT3             |    92|
-|12    |LUT4             |   241|
-|13    |LUT5             |   312|
-|14    |LUT6             |   600|
+|10    |LUT2             |   697|
+|11    |LUT3             |    88|
+|12    |LUT4             |   197|
+|13    |LUT5             |   283|
+|14    |LUT6             |   673|
 |15    |MUXF7            |    46|
 |16    |RAMB36E1         |    12|
 |17    |RAMB36E1_1       |    12|
@@ -1400,77 +1400,77 @@ Report Instance Areas:
 +------+---------------------+------------------------------------+------+
 |      |Instance             |Module                              |Cells |
 +------+---------------------+------------------------------------+------+
-|1     |top                  |                                    |  3541|
+|1     |top                  |                                    |  3536|
 |2     |  againClr           |sig_clr                             |    10|
 |3     |  againPulse         |sig_pulse                           |     3|
 |4     |  classicPos         |fixPos                              |     1|
 |5     |  downBTNClr         |sig_clr_0                           |    10|
 |6     |  downBTNPulse       |sig_pulse_1                         |     2|
-|7     |  drawScreen         |drawScreenCtrl                      |   968|
-|8     |    display          |vga320x180                          |   107|
+|7     |  drawScreen         |drawScreenCtrl                      |   967|
+|8     |    display          |vga320x180                          |   106|
 |9     |    drawLayers       |layerControl                        |   735|
-|10    |      drawBackground |drawLayer                           |    91|
-|11    |      drawBall       |drawLayer__parameterized0           |    74|
-|12    |      drawFailhole   |drawLayer__parameterized0_19        |   133|
-|13    |      drawHeading1   |drawLayer__parameterized0_20        |    76|
-|14    |      drawHeading2   |drawLayer__parameterized0_21        |    76|
-|15    |      drawOption     |drawLayer__parameterized0_22        |    79|
-|16    |      drawSelect     |drawLayer__parameterized0_23        |    74|
-|17    |      drawWinhole    |drawLayer__parameterized0_24        |    99|
+|10    |      drawBackground |drawLayer                           |    87|
+|11    |      drawBall       |drawLayer__parameterized0           |    73|
+|12    |      drawFailhole   |drawLayer__parameterized0_19        |   138|
+|13    |      drawHeading1   |drawLayer__parameterized0_20        |    86|
+|14    |      drawHeading2   |drawLayer__parameterized0_21        |    71|
+|15    |      drawOption     |drawLayer__parameterized0_22        |    74|
+|16    |      drawSelect     |drawLayer__parameterized0_23        |    71|
+|17    |      drawWinhole    |drawLayer__parameterized0_24        |   101|
 |18    |    spriteAlphabuf   |sram__parameterized1                |     1|
 |19    |    spritebuf        |sram__parameterized0                |     6|
 |20    |    vram_a           |sram                                |    24|
 |21    |    vram_b           |sram_18                             |    36|
-|22    |  dropControl        |dropInHoles                         |   998|
+|22    |  dropControl        |dropInHoles                         |   863|
 |23    |    failHole1        |positionConflict__parameterized0    |   115|
 |24    |    failHole2        |positionConflict__parameterized0_11 |    98|
-|25    |    failHole3        |positionConflict__parameterized0_12 |    98|
-|26    |    failHole4        |positionConflict__parameterized0_13 |   290|
+|25    |    failHole3        |positionConflict__parameterized0_12 |    99|
+|26    |    failHole4        |positionConflict__parameterized0_13 |   154|
 |27    |    failHole5        |positionConflict__parameterized0_14 |    98|
 |28    |    failHole6        |positionConflict__parameterized0_15 |    98|
-|29    |    failHole7        |positionConflict__parameterized0_16 |    99|
-|30    |    winHole          |positionConflict__parameterized0_17 |   102|
+|29    |    failHole7        |positionConflict__parameterized0_16 |   100|
+|30    |    winHole          |positionConflict__parameterized0_17 |   101|
 |31    |  getAccel           |myAccelerometerCtrl                 |   160|
-|32    |  getAllPos          |getRandPos                          |   580|
+|32    |  getAllPos          |getRandPos                          |   584|
 |33    |    genDecide        |positionConflict                    |   121|
 |34    |    randomX          |random                              |    20|
 |35    |    randomY          |random__parameterized0              |    18|
-|36    |  moveTheBall        |accelBallMove                       |   439|
+|36    |  moveTheBall        |accelBallMove                       |   560|
 |37    |    pos_x            |calculateX                          |    52|
 |38    |    pos_y            |calculateX__parameterized0          |    55|
-|39    |    vx               |calculateV                          |   104|
-|40    |    vy               |calculateV_10                       |   108|
+|39    |    vx               |calculateV                          |    97|
+|40    |    vy               |calculateV_10                       |   101|
 |41    |  newGameClr         |sig_clr_2                           |    10|
 |42    |  newGamePulse       |sig_pulse_3                         |    30|
 |43    |  okBTNClr           |sig_clr_4                           |    11|
-|44    |  okBTNPulse         |sig_pulse_5                         |    19|
+|44    |  okBTNPulse         |sig_pulse_5                         |    27|
 |45    |  rstClr             |sig_clr_6                           |    10|
 |46    |  rstPulse           |sig_pulse_7                         |    15|
 |47    |  upBTNClr           |sig_clr_8                           |    10|
 |48    |  upBTNPulse         |sig_pulse_9                         |     7|
 +------+---------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:35 ; elapsed = 00:01:48 . Memory (MB): peak = 1150.473 ; gain = 509.355
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:00:59 . Memory (MB): peak = 1151.961 ; gain = 371.012
-Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:17 ; elapsed = 00:01:37 . Memory (MB): peak = 1150.473 ; gain = 370.801
+Synthesis Optimization Complete : Time (s): cpu = 00:01:35 ; elapsed = 00:01:48 . Memory (MB): peak = 1150.473 ; gain = 509.355
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 398 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1151.961 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1166.543 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 205 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 1151.961 ; gain = 767.449
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1151.961 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:02:04 . Memory (MB): peak = 1166.543 ; gain = 780.922
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1166.543 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 21:15:12 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 22:22:26 2019...

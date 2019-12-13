@@ -123,7 +123,7 @@ module layerControl #(parameter
                             if(is_game_start_menu)begin
                                 layer_state<=LAYER_HEADING1;
                             end
-                            else if(is_game_pause|is_game_fail|is_game_win)begin
+                            else if(is_game_pause|is_game_fail|is_game_win|is_game_finish)begin
                                 layer_state<=LAYER_OPTION;
                             end
                             else begin
