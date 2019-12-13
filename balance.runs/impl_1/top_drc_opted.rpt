@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Dec 13 16:53:14 2019
+| Date         : Fri Dec 13 21:16:12 2019
 | Host         : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
 | Design       : top
@@ -1192,7 +1192,7 @@ Related violations: <none>
 
 IOSR-1#1 Warning
 IOB set reset sharing  
-IO theme_choose connects to flops which have these rstPulse/SR[0], rstPulse/r2_reg_4 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+IO theme_choose connects to flops which have these rstPulse/r2_reg_1, rstPulse/SR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 

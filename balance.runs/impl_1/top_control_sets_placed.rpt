@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Dec 13 16:54:11 2019
+| Date         : Fri Dec 13 21:17:07 2019
 | Host         : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    87 |
-|    Minimum number of control sets                        |    87 |
+| Total control sets                                       |    90 |
+|    Minimum number of control sets                        |    90 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   275 |
+| Unused register locations in slices containing registers |   281 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    87 |
-| >= 0 to < 4        |     3 |
-| >= 4 to < 6        |    20 |
+| Total control sets |    90 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |    21 |
 | >= 6 to < 8        |    12 |
 | >= 8 to < 10       |     7 |
-| >= 10 to < 12      |     3 |
+| >= 10 to < 12      |     6 |
 | >= 12 to < 14      |     6 |
 | >= 14 to < 16      |     2 |
 | >= 16              |    34 |
@@ -58,108 +58,111 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             116 |           50 |
+| No           | No                    | No                     |             113 |           53 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              62 |           32 |
-| Yes          | No                    | No                     |             624 |          226 |
+| No           | Yes                   | No                     |              53 |           25 |
+| Yes          | No                    | No                     |             638 |          266 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             483 |          184 |
+| Yes          | Yes                   | No                     |             499 |          188 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
-|    Clock Signal    |                         Enable Signal                        |                        Set/Reset Signal                       | Slice Load Count | Bel Load Count |
-+--------------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
-|  CLK_IBUF_BUFG     |                                                              | rstPulse/new_layer3_out                                       |                1 |              1 |
-|  CLK_IBUF_BUFG     | rstPulse/r2_reg_6                                            | drawScreen/display/v_count[6]_i_1_n_0                         |                1 |              2 |
-|  game_mode_reg_n_0 |                                                              |                                                               |                2 |              3 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/Cmd_Reg[0]_0                               | getAccel/getXY/U0/Cmd_Reg[0][6]_i_1_n_0                       |                2 |              4 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0    | rstPulse/rst                                                  |                3 |              4 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/sel                                        | getAccel/getXY/U0/Reset_Cnt_Num_Reads                         |                1 |              4 |
-|  CLK_IBUF_BUFG     | okBTNClr/cnt[3]_i_2__4_n_0                                   | okBTNClr/cnt[3]_i_1__4_n_0                                    |                1 |              4 |
-|  CLK_IBUF_BUFG     | rstClr/sel                                                   | rstClr/clear                                                  |                1 |              4 |
-|  CLK_IBUF_BUFG     | upBTNClr/cnt[3]_i_2__2_n_0                                   | upBTNClr/cnt[3]_i_1__2_n_0                                    |                1 |              4 |
-|  CLK_IBUF_BUFG     | newGameClr/cnt[3]_i_2__0_n_0                                 | newGameClr/cnt[3]_i_1__0_n_0                                  |                1 |              4 |
-|  CLK_IBUF_BUFG     | downBTNClr/cnt[3]_i_2__3_n_0                                 | downBTNClr/cnt[3]_i_1__3_n_0                                  |                1 |              4 |
-|  CLK_IBUF_BUFG     | getAllPos/success_cnt[3]_i_1_n_0                             |                                                               |                2 |              4 |
-|  CLK_IBUF_BUFG     | againClr/cnt[3]_i_2__1_n_0                                   | againClr/cnt[3]_i_1__1_n_0                                    |                1 |              4 |
-|  CLK_IBUF_BUFG     | getAllPos/genDecide/decide_cnt                               | getAllPos/decide_cnt[3]_i_1_n_0                               |                1 |              4 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/Cmd_Reg[1][6]_i_2_n_0                      | getAccel/getXY/U0/Cmd_Reg[1]0_in[7]                           |                2 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawOption/pix_x                       | drawScreen/drawLayers/drawOption/address_fb1_reg_i_2__6_n_0   |                2 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading2/pix_x                     | drawScreen/drawLayers/drawHeading2/address_fb1_reg_i_2__4_n_0 |                3 |              5 |
-|  CLK_IBUF_BUFG     | rstPulse/r2_reg_6                                            |                                                               |                3 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading1/pix_x                     | drawScreen/drawLayers/drawHeading1/address_fb1_reg_i_2__3_n_0 |                4 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBall/pix_x                         | drawScreen/drawLayers/drawBall/address_fb1_reg_i_2__2_n_0     |                3 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawSelect/pix_x                       | drawScreen/drawLayers/drawSelect/address_fb1_reg_i_2__5_n_0   |                2 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawWinhole/pix_x                      | drawScreen/drawLayers/drawWinhole/address_fb1_reg_i_2__1_n_0  |                1 |              5 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawFailhole/pix_x                     | drawScreen/drawLayers/drawFailhole/address_fb1_reg_i_2__0_n_0 |                4 |              5 |
-|  CLK_IBUF_BUFG     |                                                              | getAccel/getXY/U0/SPI_Interface/SCLK_2X_DIV0                  |                3 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawSelect/address_fb12_i_1__4_n_0     | rstPulse/r2_reg_4                                             |                1 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading2/address_fb12_i_1__3_n_0   | rstPulse/r2_reg_4                                             |                2 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/FSM_onehot_layer_state_reg[1]_0[0]     |                                                               |                2 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawOption/address_fb12_i_1__5_n_0     | rstPulse/r2_reg_4                                             |                1 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawFailhole/address_fb12_i_1_n_0      | rstPulse/SR[0]                                                |                2 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawWinhole/address_fb12_i_1__0_n_0    | rstPulse/r2_reg_4                                             |                2 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBall/address_fb12_i_1__1_n_0       | rstPulse/r2_reg_4                                             |                4 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading1/address_fb12_i_1__2_n_0   | rstPulse/r2_reg_4                                             |                4 |              6 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/Cmd_Reg[2]_1                               | getAccel/getXY/U0/Cmd_Reg[2][7]                               |                1 |              6 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/FSM_onehot_layer_state_reg[1]_1[0]     |                                                               |                5 |              6 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/Shift_Cmd_Reg                              | rstPulse/rst                                                  |                1 |              7 |
-|  CLK_IBUF_BUFG     |                                                              | againPulse/again_rst                                          |                6 |              8 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBackground/address_fb1_reg_i_1_n_0 | rstPulse/r2_reg_4                                             |                3 |              8 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/SPI_Interface/DONE_1_i_1_n_0               |                                                               |                2 |              8 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/SPI_Interface/SHIFT_TICK_IN                |                                                               |                3 |              8 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/SPI_Interface/MOSI_REG[7]_i_1_n_0          |                                                               |                2 |              8 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBackground/address_fb1_reg_i_2_n_0 | drawScreen/drawLayers/drawBackground/clear                    |                2 |              9 |
-|  CLK_IBUF_BUFG     | okBTNPulse/E[0]                                              | rstPulse/rst                                                  |                6 |              9 |
-|  CLK_IBUF_BUFG     | pix_stb                                                      | rstPulse/r2_reg_3[0]                                          |                3 |             10 |
-|  CLK_IBUF_BUFG     |                                                              | getAccel/getXY/U0/Cnt_SS_Inactive0                            |                3 |             11 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/FSM_onehot_layer_state_reg_n_0_[7]     | rstPulse/r2_reg_4                                             |                8 |             11 |
-|  CLK_IBUF_BUFG     | rstPulse/E[0]                                                | drawScreen/display/SR[0]                                      |                6 |             12 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_wh_layer_state                      | rstPulse/r2_reg_4                                             |                7 |             13 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_fh_layer_state                      | rstPulse/SR[0]                                                |                9 |             13 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_sel_layer_state                     | rstPulse/r2_reg_4                                             |                7 |             13 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_hd_layer_state_1                    | rstPulse/r2_reg_4                                             |                9 |             13 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_bl_layer_state                      | rstPulse/r2_reg_4                                             |                5 |             13 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_hd_layer_state_2                    | rstPulse/r2_reg_4                                             |                9 |             14 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/is_op_layer_state                      | rstPulse/r2_reg_4                                             |                8 |             15 |
-|  CLK_IBUF_BUFG     | okBTNClr/rand_seed_cnt0                                      |                                                               |                4 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBall/address_fb2                   |                                                               |                5 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/r2_reg[0]                              |                                                               |                8 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawBackground/address_fb2_0           |                                                               |                5 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/E[0]                                   |                                                               |                8 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawOption/address_fb2                 |                                                               |                5 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading2/address_fb2               |                                                               |                6 |             16 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/Data_Ready                                 |                                                               |                5 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawFailhole/address_fb2               |                                                               |                6 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawWinhole/address_fb2                |                                                               |                4 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawSelect/address_fb2                 |                                                               |                5 |             16 |
-|  CLK_IBUF_BUFG     | drawScreen/drawLayers/drawHeading1/address_fb2               |                                                               |                9 |             16 |
-|  CLK_IBUF_BUFG     |                                                              | getAccel/getXY/U0/Reset_Sample_Rate_Div                       |                4 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[157]_i_1_n_0                           |                                                               |               10 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[117]_i_1_n_0                           |                                                               |               10 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[97]_i_1_n_0                            |                                                               |                7 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[137]_i_1_n_0                           |                                                               |                9 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[177]_i_1_n_0                           |                                                               |                5 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[107]_i_1_n_0                           |                                                               |               10 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[127]_i_1_n_0                           |                                                               |                9 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/y_succeeded[7]_i_1_n_0                             |                                                               |                5 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[167]_i_1_n_0                           |                                                               |                6 |             17 |
-|  CLK_IBUF_BUFG     | getAllPos/o_rand_list[147]_i_1_n_0                           |                                                               |                8 |             17 |
-|  CLK_IBUF_BUFG     | moveTheBall/is_ball_moving                                   | moveTheBall/calc_cnt[0]_i_1_n_0                               |                5 |             18 |
-|  CLK_IBUF_BUFG     |                                                              | rstPulse/rst                                                  |               15 |             19 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/StC_Adxl_Ctrl[3]                           | rstPulse/rst                                                  |                4 |             20 |
-|  CLK_IBUF_BUFG     | moveTheBall/pos_y/FSM_onehot_game_state_reg[6]               | moveTheBall/pos_y/next_pos[31]_i_1_n_0                        |                8 |             29 |
-|  CLK_IBUF_BUFG     | moveTheBall/pos_y/FSM_onehot_game_state_reg[6]               | moveTheBall/pos_x/next_pos[31]_i_1__0_n_0                     |                8 |             30 |
-|  CLK_IBUF_BUFG     | moveTheBall/vy/calc_time                                     | moveTheBall/pos_x/FSM_onehot_game_state_reg[6]                |                8 |             32 |
-|  CLK_IBUF_BUFG     | moveTheBall/vy/calc_time                                     | moveTheBall/pos_y/FSM_onehot_game_state_reg[6]_0              |                8 |             32 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/sel                                        | getAccel/getXY/U0/ACCEL_X_SUM0                                |                8 |             32 |
-|  CLK_IBUF_BUFG     | getAccel/getXY/U0/SPI_Interface/Shift_Data_Reg               |                                                               |               12 |             64 |
-|  CLK_IBUF_BUFG     |                                                              |                                                               |               48 |            113 |
-|  CLK_IBUF_BUFG     | getAllPos/E[0]                                               |                                                               |               46 |            153 |
-+--------------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
++----------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
+|  Clock Signal  |                         Enable Signal                        |                        Set/Reset Signal                       | Slice Load Count | Bel Load Count |
++----------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
+|  CLK_IBUF_BUFG |                                                              | rstPulse/new_layer3_out                                       |                1 |              1 |
+|  CLK_IBUF_BUFG | rstPulse/r2_reg_2                                            | drawScreen/display/v_count[6]_i_1_n_0                         |                1 |              2 |
+|  CLK_IBUF_BUFG | upBTNClr/cnt[3]_i_2__2_n_0                                   | upBTNClr/cnt[3]_i_1__2_n_0                                    |                1 |              4 |
+|  CLK_IBUF_BUFG | againClr/cnt[3]_i_2__1_n_0                                   | againClr/cnt[3]_i_1__1_n_0                                    |                1 |              4 |
+|  CLK_IBUF_BUFG | getAllPos/success_cnt[3]_i_1_n_0                             |                                                               |                1 |              4 |
+|  CLK_IBUF_BUFG | newGameClr/cnt[3]_i_2__0_n_0                                 | newGameClr/cnt[3]_i_1__0_n_0                                  |                1 |              4 |
+|  CLK_IBUF_BUFG | rstClr/sel                                                   | rstClr/clear                                                  |                1 |              4 |
+|  CLK_IBUF_BUFG | rstPulse/r1_reg_0[0]                                         |                                                               |                3 |              4 |
+|  CLK_IBUF_BUFG | getAllPos/genDecide/E[0]                                     |                                                               |                1 |              4 |
+|  CLK_IBUF_BUFG | downBTNClr/cnt[3]_i_2__3_n_0                                 | downBTNClr/cnt[3]_i_1__3_n_0                                  |                1 |              4 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/sel                                        | getAccel/getXY/U0/Reset_Cnt_Num_Reads                         |                1 |              4 |
+|  CLK_IBUF_BUFG | okBTNClr/cnt[3]_i_2__4_n_0                                   | okBTNClr/cnt[3]_i_1__4_n_0                                    |                1 |              4 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0    | rstPulse/rst                                                  |                2 |              4 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/Cmd_Reg[0]_0                               | getAccel/getXY/U0/Cmd_Reg[0][6]_i_1_n_0                       |                1 |              4 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawSelect/pix_x                       | drawScreen/drawLayers/drawSelect/address_fb1_reg_i_2__5_n_0   |                2 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawFailhole/pix_x                     | drawScreen/drawLayers/drawFailhole/address_fb1_reg_i_2__0_n_0 |                3 |              5 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/Cmd_Reg[1][6]_i_2_n_0                      | getAccel/getXY/U0/Cmd_Reg[1]0_in[7]                           |                2 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBall/pix_x                         | drawScreen/drawLayers/drawBall/address_fb1_reg_i_2__2_n_0     |                2 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawWinhole/pix_x                      | drawScreen/drawLayers/drawWinhole/address_fb1_reg_i_2__1_n_0  |                3 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading2/pix_x                     | drawScreen/drawLayers/drawHeading2/address_fb1_reg_i_2__4_n_0 |                1 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawOption/pix_x                       | drawScreen/drawLayers/drawOption/address_fb1_reg_i_2__6_n_0   |                4 |              5 |
+|  CLK_IBUF_BUFG | rstPulse/r2_reg_2                                            |                                                               |                3 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading1/pix_x                     | drawScreen/drawLayers/drawHeading1/address_fb1_reg_i_2__3_n_0 |                2 |              5 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawWinhole/address_fb12_i_1__0_n_0    | rstPulse/r2_reg_1                                             |                2 |              6 |
+|  CLK_IBUF_BUFG |                                                              | getAccel/getXY/U0/SPI_Interface/SCLK_2X_DIV0                  |                2 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/FSM_onehot_layer_state_reg[1]_0[0]     |                                                               |                5 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/FSM_onehot_layer_state_reg[1]_1[0]     |                                                               |                6 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading1/address_fb12_i_1__2_n_0   | rstPulse/r2_reg_1                                             |                1 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading2/address_fb12_i_1__3_n_0   | rstPulse/r2_reg_1                                             |                3 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBall/address_fb12_i_1__1_n_0       | rstPulse/r2_reg_1                                             |                4 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawFailhole/address_fb12_i_1_n_0      | rstPulse/SR[0]                                                |                3 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawOption/address_fb12_i_1__5_n_0     | rstPulse/r2_reg_1                                             |                2 |              6 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawSelect/address_fb12_i_1__4_n_0     | rstPulse/r2_reg_1                                             |                2 |              6 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/Cmd_Reg[2]_1                               | getAccel/getXY/U0/Cmd_Reg[2][7]                               |                2 |              6 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/Shift_Cmd_Reg                              | rstPulse/rst                                                  |                3 |              7 |
+|  CLK_IBUF_BUFG |                                                              | againPulse/again_rst                                          |                7 |              8 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/SPI_Interface/MOSI_REG[7]_i_1_n_0          |                                                               |                3 |              8 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBackground/address_fb1_reg_i_1_n_0 | rstPulse/r2_reg_1                                             |                3 |              8 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/SPI_Interface/DONE_1_i_1_n_0               |                                                               |                4 |              8 |
+|  CLK_IBUF_BUFG | okBTNPulse/FSM_sequential_game_state_reg[3]                  | rstPulse/rst                                                  |                5 |              8 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/SPI_Interface/SHIFT_TICK_IN                |                                                               |                2 |              8 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBackground/pix_x                   | drawScreen/drawLayers/drawBackground/clear                    |                3 |              9 |
+|  CLK_IBUF_BUFG | pix_stb                                                      | rstPulse/r2_reg_0[0]                                          |                2 |             10 |
+|  CLK_IBUF_BUFG |                                                              | rstPulse/rst                                                  |                7 |             10 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBackground/E[0]                    | rstPulse/rst                                                  |                6 |             10 |
+|  CLK_IBUF_BUFG |                                                              | getAccel/getXY/U0/Cnt_SS_Inactive0                            |                3 |             11 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/FSM_onehot_layer_state_reg_n_0_[7]     | rstPulse/r2_reg_1                                             |                5 |             11 |
+|  CLK_IBUF_BUFG | rstPulse/FSM_sequential_game_state_reg[3]                    | rstPulse/game_mode_reg                                        |                6 |             11 |
+|  CLK_IBUF_BUFG | rstPulse/E[0]                                                | drawScreen/display/SR[0]                                      |                6 |             12 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_hd_layer_state_1                    | rstPulse/r2_reg_1                                             |                7 |             13 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_fh_layer_state                      | rstPulse/SR[0]                                                |                7 |             13 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_bl_layer_state                      | rstPulse/r2_reg_1                                             |                8 |             13 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_sel_layer_state                     | rstPulse/r2_reg_1                                             |                6 |             13 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_wh_layer_state                      | rstPulse/r2_reg_1                                             |                7 |             13 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_hd_layer_state_2                    | rstPulse/r2_reg_1                                             |                6 |             14 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/is_op_layer_state                      | rstPulse/r2_reg_1                                             |                9 |             15 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBackground/address_fb2_0           |                                                               |                5 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading1/address_fb2               |                                                               |                5 |             16 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/Data_Ready                                 |                                                               |                3 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawHeading2/address_fb2               |                                                               |                4 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawWinhole/address_fb2                |                                                               |                6 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawOption/address_fb2                 |                                                               |                4 |             16 |
+|  CLK_IBUF_BUFG | okBTNClr/rand_seed_cnt0                                      |                                                               |                4 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawSelect/address_fb2                 |                                                               |                3 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/E[0]                                   |                                                               |                8 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/r2_reg[0]                              |                                                               |                6 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawFailhole/address_fb2               |                                                               |                6 |             16 |
+|  CLK_IBUF_BUFG | drawScreen/drawLayers/drawBall/address_fb2                   |                                                               |                5 |             16 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[147]_i_1_n_0                           |                                                               |               11 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[137]_i_1_n_0                           |                                                               |               11 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[97]_i_1_n_0                            |                                                               |               10 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[177]_i_1_n_0                           |                                                               |                9 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[167]_i_1_n_0                           |                                                               |               13 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/x_deciding                                         |                                                               |                9 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/y_succeeded[7]_i_1_n_0                             |                                                               |                9 |             17 |
+|  CLK_IBUF_BUFG |                                                              | getAccel/getXY/U0/Reset_Sample_Rate_Div                       |                5 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[107]_i_1_n_0                           |                                                               |               10 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[117]_i_1_n_0                           |                                                               |               10 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[127]_i_1_n_0                           |                                                               |                7 |             17 |
+|  CLK_IBUF_BUFG | getAllPos/o_rand_list[157]_i_1_n_0                           |                                                               |               12 |             17 |
+|  CLK_IBUF_BUFG | moveTheBall/is_ball_moving                                   | moveTheBall/calc_cnt[0]_i_1_n_0                               |                5 |             18 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/StC_Adxl_Ctrl[3]                           | rstPulse/rst                                                  |                5 |             20 |
+|  CLK_IBUF_BUFG | moveTheBall/pos_y/FSM_sequential_game_state_reg[2]           | moveTheBall/pos_y/next_pos[31]_i_1__0_n_0                     |                8 |             29 |
+|  CLK_IBUF_BUFG | moveTheBall/pos_y/FSM_sequential_game_state_reg[2]           | moveTheBall/pos_x/next_pos0_in[17]                            |                8 |             30 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/sel                                        | getAccel/getXY/U0/ACCEL_X_SUM0                                |                8 |             32 |
+|  CLK_IBUF_BUFG | moveTheBall/vy/calc_time                                     | moveTheBall/pos_y/rst_vy                                      |                8 |             32 |
+|  CLK_IBUF_BUFG | moveTheBall/vy/calc_time                                     | moveTheBall/pos_x/rst_vx                                      |                8 |             32 |
+|  CLK_IBUF_BUFG | getAccel/getXY/U0/SPI_Interface/Shift_Data_Reg               |                                                               |               16 |             64 |
+|  CLK_IBUF_BUFG |                                                              |                                                               |               53 |            113 |
+|  CLK_IBUF_BUFG | rstPulse/FSM_sequential_game_state_reg[3]                    |                                                               |               52 |            142 |
++----------------+--------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+
 
 

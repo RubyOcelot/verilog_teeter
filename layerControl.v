@@ -32,12 +32,19 @@ module layerControl #(parameter
     input is_game_pause,
     input is_game_win,
     input is_game_fail,
+    input is_game_finish,
+    input game_mode,
     input [2:0]i_select_pos,
     output [VRAM_A_WIDTH-1:0] o_address_screen,
     output [SPRITEBUF_A_WIDTH-1:0] o_address_s,
     output o_is_layer_drawing,
     output [10:0]o_led
 );
+
+    localparam SPRITE_PAUSE_CLASSIC_INDEX=11;
+    localparam SPRITE_FAIL_CLASSIC_INDEX=12;
+    localparam SPRITE_WIN_CLASSIC_INDEX=13;
+    localparam SPRITE_FINISH_INDEX=14;
 
     localparam LAYER_IDLE=4'h3;
     localparam LAYER_BACKGROUND=4'h0;
@@ -56,28 +63,43 @@ module layerControl #(parameter
                 op_layer_end,sel_layer_end;
     reg fh_layer_end=0;
     reg [7:0]test_cnt = 0;
+    reg layer_delay=0;
     
     //layer state machine
     always @(posedge CLK) begin
         if (rst) begin
             layer_state<=LAYER_RST;
+            layer_delay <=0;
         end
         else begin
             case(layer_state) 
                 LAYER_BACKGROUND: begin
                     if(bg_layer_end) begin
-                        if(is_game_start_menu) begin
-                            layer_state<=LAYER_BALL;
+                        if(layer_delay)begin
+                            if(is_game_start_menu) begin
+                                layer_state<=LAYER_BALL;
+                            end
+                            else begin
+                                layer_state<=LAYER_FAILHOLE;
+                            end
+                            layer_delay<=0;
                         end
                         else begin
-                            layer_state<=LAYER_FAILHOLE;
+                            layer_delay <=1;
                         end
                     end
                     else layer_state<=LAYER_BACKGROUND;
                 end
                 LAYER_FAILHOLE: begin
                     if (fh_layer_end) begin
-                        layer_state<=LAYER_WINHOLE;
+                        if(layer_delay)begin
+                        
+                            layer_state<=LAYER_WINHOLE;
+                            layer_delay <=0;
+                        end
+                        else begin
+                            layer_delay <=1;
+                        end
                     end
                     else begin
                         layer_state<=LAYER_FAILHOLE;
@@ -85,7 +107,11 @@ module layerControl #(parameter
                 end
                 LAYER_WINHOLE: begin
                     if(wh_layer_end) begin
-                        layer_state<=LAYER_BALL;
+                        if(layer_delay)begin
+                            layer_state<=LAYER_BALL;
+                            layer_delay <=0;
+                        end
+                        else layer_delay<=1;
                     end
                     else begin
                         layer_state<=LAYER_WINHOLE;
@@ -93,15 +119,19 @@ module layerControl #(parameter
                 end
                 LAYER_BALL: begin
                     if(bl_layer_end) begin
-                        if(is_game_start_menu)begin
-                            layer_state<=LAYER_HEADING1;
+                        if(layer_delay)begin
+                            if(is_game_start_menu)begin
+                                layer_state<=LAYER_HEADING1;
+                            end
+                            else if(is_game_pause|is_game_fail|is_game_win)begin
+                                layer_state<=LAYER_OPTION;
+                            end
+                            else begin
+                                layer_state<=LAYER_IDLE;
+                            end
+                            layer_delay <=0;
                         end
-                        else if(is_game_pause|is_game_fail|is_game_win)begin
-                            layer_state<=LAYER_OPTION;
-                        end
-                        else begin
-                            layer_state<=LAYER_IDLE;
-                        end
+                        else layer_delay<=1;
                     end
                     else
                         layer_state<=LAYER_BALL;
@@ -109,32 +139,51 @@ module layerControl #(parameter
                 LAYER_HEADING1:begin
                    // test_cnt<=test_cnt+4'h1;
                     if(hd_layer_end_1)
-                        layer_state<=LAYER_HEADING2;
+                        if(layer_delay)begin
+                            layer_state<=LAYER_HEADING2;
+                            layer_delay <=0;
+                        end
+                        else layer_delay<=1;
+
                     else
                         layer_state<=LAYER_HEADING1; 
                 end
                 
                 LAYER_HEADING2:begin
                     if(hd_layer_end_2)
-                        layer_state<=LAYER_OPTION;
+                        if(layer_delay)begin
+                            layer_state<=LAYER_OPTION;
+                            layer_delay <=0;
+                        end
+                        else layer_delay<=1;
                     else
                         layer_state<=LAYER_HEADING2; 
                 end
                 LAYER_OPTION: begin
                     if(op_layer_end)
-                        layer_state<=LAYER_SELECT;
+                        if(layer_delay)begin
+                            layer_state<=LAYER_SELECT;
+                            layer_delay<=0;
+                        end
+                        else layer_delay<=1;
                     else
                         layer_state<=LAYER_OPTION;
                 end
                 LAYER_SELECT: begin
                     if(sel_layer_end)
-                        layer_state<=LAYER_IDLE;
+                        if(layer_delay)begin
+                            layer_state<=LAYER_IDLE;
+                            layer_delay <=0;
+                        end
+                        else layer_delay<=1;
                     else
                         layer_state<=LAYER_SELECT;
                 end
                 LAYER_IDLE: begin
-                    if(screenend)
+                    if(screenend) begin
                         layer_state<=LAYER_RESETING;
+                        layer_delay <=0;
+                    end
                     else
                         layer_state<=LAYER_IDLE;
                 end
@@ -507,18 +556,22 @@ module layerControl #(parameter
     );
     
     reg [3:0]sprite_op_index=0;
+    wire [3:0]game_mode_offset;
+    assign game_mode_offset=(game_mode)?4'h0:4'h3;
     always @(*) begin
-        if(is_game_start_menu) begin
-            sprite_op_index=SPRITE_MODE_INDEX;
+        if(is_game_finish)
+            sprite_op_index=SPRITE_FINISH_INDEX;
+        else if(is_game_start_menu) begin
+            sprite_op_index=SPRITE_MODE_INDEX+game_mode_offset;
         end
         else if(is_game_pause)begin
-            sprite_op_index=SPRITE_PAUSE_INDEX;
+            sprite_op_index=SPRITE_PAUSE_INDEX+game_mode_offset;
         end
         else if(is_game_fail)begin
-            sprite_op_index=SPRITE_FAIL_INDEX;
+            sprite_op_index=SPRITE_FAIL_INDEX+game_mode_offset;
         end
         else if(is_game_win)begin
-            sprite_op_index=SPRITE_WIN_INDEX;
+            sprite_op_index=SPRITE_WIN_INDEX+game_mode_offset;
         end
         else begin
             sprite_op_index=0;

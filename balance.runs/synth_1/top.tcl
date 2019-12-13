@@ -35,9 +35,6 @@ update_ip_catalog
 set_property ip_output_repo c:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem {
-  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance.mem
-  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance_palette.mem
-  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance_alpha.mem
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2.mem
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2_palette.mem
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/materials/balance2_alpha.mem
@@ -46,6 +43,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateV.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/calculateX.v
+  C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/classicPos.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawSingleLayer.v
   C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v

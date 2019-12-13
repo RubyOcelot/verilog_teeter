@@ -8,6 +8,7 @@ module top(
     input UP_BTN,
     input DOWN_BTN,
     input OK_BTN,
+    input [3:0]level_choose,
     output wire VGA_HS_O,       // horizontal sync output
     output wire VGA_VS_O,       // vertical sync output
     output [3:0] VGA_R,     // 4-bit VGA red output
@@ -71,7 +72,7 @@ module top(
 
     // sprite buffer (read-only)
     localparam SPRITE_SIZE = 32;  // dimensions of square sprites in pixels
-    localparam SPRITE_COUNT = 22;  // number of sprites in buffer
+    localparam SPRITE_COUNT = 30;  // number of sprites in buffer
     localparam SPRITEBUF_D_WIDTH = 8;  // colour bits per pixel
     localparam SPRITEBUF_DEPTH = SPRITE_SIZE * SPRITE_SIZE * SPRITE_COUNT;    
     localparam SPRITEBUF_A_WIDTH = 15;  // 2^13 == 8,096 == 32 x 256 =SPRITEBUF_DEPTH
@@ -105,6 +106,7 @@ module top(
     reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_x={10'd10,10'd50,10'd80,10'd100,10'd200,10'd250,10'd280};
     reg [10*(MAX_FAILHOLE_NUM)-1:0]fh_pos_y={10'd130,10'd25,10'd140,10'd50,10'd100,10'd70,10'd10};
     wire [20*(MAX_FAILHOLE_NUM+2)-1:0]rand_list;
+    wire [20*(MAX_FAILHOLE_NUM+2)-1:0]classic_list;
     wire rand_data_ready;
 
     getRandPos #(
@@ -122,23 +124,19 @@ module top(
 
     reg [2:0]max_option,select_pos=0;
     wire screenend;
-    wire is_game_playing,is_game_pause,is_game_start_menu,is_game_fail,is_game_win;
+    wire is_game_playing,is_game_pause,is_game_start_menu,is_game_fail,is_game_win,is_game_finish;
     //vga controller
 
     reg [2:0]select_pos_alt=0;
     always @(*) begin
-        if(game_mode==ENDLESS)begin
-            case(game_state)
-                GAME_START_MENU:select_pos_alt=select_pos;
-                GAME_PAUSE: select_pos_alt=select_pos;
-                GAME_FAIL: select_pos_alt=select_pos+3'h1;
-                GAME_WIN:select_pos_alt=select_pos+3'h1;
-                default:select_pos_alt=select_pos;
-            endcase
-        end
-        else begin
-
-        end
+        case(game_state)
+            GAME_START_MENU:select_pos_alt=select_pos;
+            GAME_PAUSE: select_pos_alt=select_pos;
+            GAME_FAIL: select_pos_alt=select_pos+3'h1;
+            GAME_WIN:select_pos_alt=select_pos+3'h1;
+            GAME_FINISH:select_pos_alt=select_pos+3'h1;
+            default:select_pos_alt=select_pos;
+        endcase
     end
     drawScreenCtrl #(
         .VRAM_A_WIDTH(VRAM_A_WIDTH),
@@ -177,6 +175,8 @@ module top(
         .is_game_pause(is_game_pause),
         .is_game_win(is_game_win),
         .is_game_fail(is_game_fail),
+        .is_game_finish(is_game_finish),
+        .game_mode(game_mode),
         .i_select_pos(select_pos_alt),
         .VGA_R(VGA_R),
         .VGA_G(VGA_G),
@@ -273,7 +273,13 @@ module top(
             end
             GAME_WIN:max_option=3'h2;
             GAME_FAIL:begin
-                max_option=3'h2;
+                if(game_mode==ENDLESS)
+                    max_option=3'h2;
+                else
+                    max_option=3'h1;
+            end
+            GAME_FINISH:begin
+                max_option=3'h1;
             end
             default begin
                 max_option=3'h3;
@@ -294,6 +300,15 @@ module top(
         end
     end
 
+    reg [3:0]level_cnt=0;
+    //classic mode
+    fixPos #(
+        .LIST_LENGTH(20*(MAX_FAILHOLE_NUM+2))
+        )
+        classicPos(
+            .level(level_cnt),
+            .pos_list(classic_list)
+    );
 
 
     //game control state machine
@@ -306,6 +321,7 @@ module top(
     localparam GAME_PAUSE=4'h7;
     localparam GAME_FAIL=4'h2;
     localparam GAME_WIN=4'h3;
+    localparam GAME_FINISH=4'h9;
     localparam GAME_RST=GAME_START_MENU;
 
     reg [3:0] game_state=GAME_START_MENU;
@@ -322,8 +338,8 @@ module top(
                 GAME_START_MENU: begin
                     if(ok_btn)begin
                         if(select_pos==0)begin
-                            //game_mode<=CLASSIC;
-                            game_state<=GAME_START_MENU;
+                            game_mode<=CLASSIC;
+                            game_state<=GAME_NEW;
                         end
                         else begin
                             game_mode<=ENDLESS;
@@ -338,19 +354,33 @@ module top(
                 end
                 GAME_NEW: begin
                     //game_state<=GAME_PLAYING;
-                    
-                    if(accel_data_ready&&rand_data_ready)begin
-                    //if(rand_data_ready)begin
-                        game_state<=GAME_BALL_RST;
-                        fh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM)-1:0];
-                        wh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
-                        bl_pos_initial_x<=rand_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
-                        fh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
-                        wh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
-                        bl_pos_initial_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                    if(game_mode==ENDLESS) begin
+                        if(accel_data_ready&&rand_data_ready)begin
+                        //if(rand_data_ready)begin
+                            game_state<=GAME_BALL_RST;
+                            fh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM)-1:0];
+                            wh_pos_x<=rand_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
+                            bl_pos_initial_x<=rand_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
+                            fh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
+                            wh_pos_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
+                            bl_pos_initial_y<=rand_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                        end
+                        else
+                            game_state<=GAME_NEW;
                     end
-                    else
-                        game_state<=GAME_NEW;
+                    else begin
+                        if(accel_data_ready)begin
+                            game_state<=GAME_BALL_RST;
+                            fh_pos_x<=classic_list[10*(MAX_FAILHOLE_NUM)-1:0];
+                            wh_pos_x<=classic_list[10*(MAX_FAILHOLE_NUM+1)-1:10*MAX_FAILHOLE_NUM];
+                            bl_pos_initial_x<=classic_list[10*(MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+1)];
+                            fh_pos_y<=classic_list[10*(2*MAX_FAILHOLE_NUM+2)-1:10*(MAX_FAILHOLE_NUM+2)];
+                            wh_pos_y<=classic_list[10*(2*MAX_FAILHOLE_NUM+3)-1:10*(2*MAX_FAILHOLE_NUM+2)];
+                            bl_pos_initial_y<=classic_list[10*(2*MAX_FAILHOLE_NUM+4)-1:10*(2*MAX_FAILHOLE_NUM+3)];
+                        end
+                        else
+                            game_state<=GAME_NEW;
+                    end
                 end
                 GAME_BALL_RST:begin
                     game_state<=GAME_PLAYING;
@@ -387,6 +417,19 @@ module top(
                                 end
                             endcase
                         end
+                        else begin
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_PLAYING;
+                                end
+                                3'h1: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                default: begin
+                                    game_state<=GAME_PAUSE;
+                                end
+                            endcase
+                        end
                     end
                     else
                         game_state<=GAME_PAUSE;
@@ -407,7 +450,14 @@ module top(
                             endcase
                         end
                         else begin
-
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                default: begin
+                                    game_state<=GAME_FAIL;
+                                end
+                            endcase
                         end
                     end
                     else
@@ -429,11 +479,40 @@ module top(
                             endcase
                         end
                         else begin
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                3'h1: begin
+                                    if(level_cnt<4'h9) begin
+                                        level_cnt<=level_cnt+4'h1;
+                                        game_state<=GAME_NEW_RST;
+                                    end
+                                    else
+                                        game_state<=GAME_FINISH;
+                                end
+                                default: begin
+                                    game_state<=GAME_WIN;
+                                end
+                            endcase
 
                         end
                     end
                     else
                         game_state<=GAME_WIN;
+                end
+                GAME_FINISH: begin
+                    if(ok_btn)begin
+                        case(select_pos)
+                            3'h0: begin
+                                game_state<=GAME_START_MENU;
+                            end
+                            default: begin
+                                game_state<=GAME_WIN;
+                            end
+                        endcase
+
+                    end
                 end
             default: game_state<=game_state;
         endcase
@@ -475,9 +554,10 @@ module top(
     assign is_game_pause=(game_state==GAME_PAUSE);
     assign is_game_fail=(game_state==GAME_FAIL);
     assign is_game_win=(game_state==GAME_WIN);
+    assign is_game_finish=(game_state==GAME_FINISH);
     
     assign new_game_rst=rst|new_game_pulse|(game_state==GAME_NEW_RST);
-    assign again_rst=rst|new_game_rst|again_pulse|(game_state==GAME_AGAIN);
+    assign again_rst=rst|new_game_rst|again_pulse|(game_state==GAME_AGAIN)|(game_state==GAME_NEW_RST);
     assign rand_rst=rst|new_game_rst|(game_state==GAME_NEW_RST);
 
 

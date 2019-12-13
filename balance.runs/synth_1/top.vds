@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Dec 13 16:46:48 2019
-# Process ID: 20700
+# Start of session at: Fri Dec 13 21:13:42 2019
+# Process ID: 16088
 # Current directory: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.vds
@@ -19,21 +19,22 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14288 
-WARNING: [Synth 8-6901] identifier 'game_mode' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:130]
-WARNING: [Synth 8-6901] identifier 'ENDLESS' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:130]
-WARNING: [Synth 8-6901] identifier 'game_state' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:131]
-WARNING: [Synth 8-6901] identifier 'GAME_START_MENU' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:132]
-WARNING: [Synth 8-6901] identifier 'GAME_PAUSE' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:133]
-WARNING: [Synth 8-6901] identifier 'GAME_FAIL' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:134]
-WARNING: [Synth 8-6901] identifier 'GAME_WIN' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:135]
+INFO: Helper process launched with PID 16704 
+WARNING: [Synth 8-992] game_mode is already implicitly declared earlier [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:260]
+WARNING: [Synth 8-6901] identifier 'game_state' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:132]
+WARNING: [Synth 8-6901] identifier 'GAME_START_MENU' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:133]
+WARNING: [Synth 8-6901] identifier 'GAME_PAUSE' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:134]
+WARNING: [Synth 8-6901] identifier 'GAME_FAIL' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:135]
+WARNING: [Synth 8-6901] identifier 'GAME_WIN' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:136]
+WARNING: [Synth 8-6901] identifier 'GAME_FINISH' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:137]
 WARNING: [Synth 8-6901] identifier 'game_state' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:264]
 WARNING: [Synth 8-6901] identifier 'GAME_START_MENU' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:265]
 WARNING: [Synth 8-6901] identifier 'GAME_PAUSE' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:266]
 WARNING: [Synth 8-6901] identifier 'GAME_WIN' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:274]
 WARNING: [Synth 8-6901] identifier 'GAME_FAIL' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:275]
+WARNING: [Synth 8-6901] identifier 'GAME_FINISH' is used before its declaration [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:281]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 824.707 ; gain = 182.934
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 823.176 ; gain = 181.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
 	Parameter SCREEN_WIDTH bound to: 320 - type: integer 
@@ -43,9 +44,9 @@ INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/C
 	Parameter VRAM_D_WIDTH bound to: 8 - type: integer 
 	Parameter PIXEL_COORD_BIT bound to: 10 - type: integer 
 	Parameter SPRITE_SIZE bound to: 32 - type: integer 
-	Parameter SPRITE_COUNT bound to: 22 - type: integer 
+	Parameter SPRITE_COUNT bound to: 30 - type: integer 
 	Parameter SPRITEBUF_D_WIDTH bound to: 8 - type: integer 
-	Parameter SPRITEBUF_DEPTH bound to: 22528 - type: integer 
+	Parameter SPRITEBUF_DEPTH bound to: 30720 - type: integer 
 	Parameter SPRITEBUF_A_WIDTH bound to: 15 - type: integer 
 	Parameter SPRITE_BG_INDEX bound to: 0 - type: integer 
 	Parameter SPRITE_BL_INDEX bound to: 1 - type: integer 
@@ -71,6 +72,7 @@ INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/14832/Documents/study/C
 	Parameter GAME_PAUSE bound to: 4'b0111 
 	Parameter GAME_FAIL bound to: 4'b0010 
 	Parameter GAME_WIN bound to: 4'b0011 
+	Parameter GAME_FINISH bound to: 4'b1001 
 	Parameter GAME_RST bound to: 4'b0000 
 INFO: [Synth 8-6157] synthesizing module 'sig_clr' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sig_clr.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'sig_clr' (1#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sig_clr.v:1]
@@ -117,12 +119,12 @@ INFO: [Synth 8-6157] synthesizing module 'drawScreenCtrl' [C:/Users/14832/Docume
 	Parameter SPRITE_WIN_INDEX bound to: 10 - type: integer 
 	Parameter SPRITEBUF_A_WIDTH bound to: 15 - type: integer 
 	Parameter SPRITEBUF_D_WIDTH bound to: 8 - type: integer 
-	Parameter SPRITEBUF_DEPTH bound to: 22528 - type: integer 
+	Parameter SPRITEBUF_DEPTH bound to: 30720 - type: integer 
 	Parameter MAX_FAILHOLE_NUM bound to: 7 - type: integer 
 	Parameter SCREEN_READING_A bound to: 1'b0 
 	Parameter SCREEN_READING_B bound to: 1'b1 
-INFO: [Synth 8-251] Loading palette. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:135]
-INFO: [Synth 8-3876] $readmem data file 'balance2_palette.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:136]
+INFO: [Synth 8-251] Loading palette. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:137]
+INFO: [Synth 8-3876] $readmem data file 'balance2_palette.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:138]
 INFO: [Synth 8-6157] synthesizing module 'vga320x180' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/vga320x180.v:1]
 	Parameter HS_STA bound to: 16 - type: integer 
 	Parameter HS_END bound to: 112 - type: integer 
@@ -143,7 +145,7 @@ INFO: [Synth 8-6155] done synthesizing module 'sram' (7#1) [C:/Users/14832/Docum
 INFO: [Synth 8-6157] synthesizing module 'sram__parameterized0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
 	Parameter ADDR_WIDTH bound to: 15 - type: integer 
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
-	Parameter DEPTH bound to: 22528 - type: integer 
+	Parameter DEPTH bound to: 30720 - type: integer 
 	Parameter MEMFILE bound to: balance2.mem - type: string 
 INFO: [Synth 8-251] Loading memor £4I?Q¤-3þÂ [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:14]
 INFO: [Synth 8-3876] $readmem data file 'balance2.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:15]
@@ -151,7 +153,7 @@ INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized0' (7#1) [C:/U
 INFO: [Synth 8-6157] synthesizing module 'sram__parameterized1' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:1]
 	Parameter ADDR_WIDTH bound to: 15 - type: integer 
 	Parameter DATA_WIDTH bound to: 1 - type: integer 
-	Parameter DEPTH bound to: 22528 - type: integer 
+	Parameter DEPTH bound to: 30720 - type: integer 
 	Parameter MEMFILE bound to: balance2_alpha.mem - type: string 
 INFO: [Synth 8-251] Loading ÏÆÙÐá¦<?O±0=3þÂ [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:14]
 INFO: [Synth 8-3876] $readmem data file 'balance2_alpha.mem' is read successfully [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:15]
@@ -173,6 +175,10 @@ INFO: [Synth 8-6157] synthesizing module 'layerControl' [C:/Users/14832/Document
 	Parameter SPRITE_WIN_INDEX bound to: 10 - type: integer 
 	Parameter SPRITE_SIZE bound to: 32 - type: integer 
 	Parameter MAX_FAILHOLE_NUM bound to: 7 - type: integer 
+	Parameter SPRITE_PAUSE_CLASSIC_INDEX bound to: 11 - type: integer 
+	Parameter SPRITE_FAIL_CLASSIC_INDEX bound to: 12 - type: integer 
+	Parameter SPRITE_WIN_CLASSIC_INDEX bound to: 13 - type: integer 
+	Parameter SPRITE_FINISH_INDEX bound to: 14 - type: integer 
 	Parameter LAYER_IDLE bound to: 4'b0011 
 	Parameter LAYER_BACKGROUND bound to: 4'b0000 
 	Parameter LAYER_FAILHOLE bound to: 4'b0001 
@@ -210,8 +216,8 @@ INFO: [Synth 8-6155] done synthesizing module 'drawLayer__parameterized0' (8#1) 
 INFO: [Synth 8-6155] done synthesizing module 'layerControl' (9#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/layerControl.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'drawScreenCtrl' (10#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/drawScreen.v:1]
 INFO: [Synth 8-6157] synthesizing module 'myAccelerometerCtrl' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-20700-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-20700-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ADXL362Control_0' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-16088-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ADXL362Control_0' (11#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/.Xil/Vivado-16088-DESKTOP-T1S8RDD/realtime/ADXL362Control_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'myAccelerometerCtrl' (12#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/myAccelerometerCtrl.v:1]
 INFO: [Synth 8-6157] synthesizing module 'accelBallMove' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/ballMove.v:1]
 	Parameter SPRITE_BL_X bound to: 144 - type: integer 
@@ -259,7 +265,10 @@ INFO: [Synth 8-6157] synthesizing module 'positionConflict__parameterized0' [C:/
 	Parameter RADIUS bound to: 14 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'positionConflict__parameterized0' (15#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/positionConflict.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'dropInHoles' (16#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/dropInHoles.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'top' (17#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
+INFO: [Synth 8-6157] synthesizing module 'fixPos' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/classicPos.v:1]
+	Parameter LIST_LENGTH bound to: 180 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fixPos' (17#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/classicPos.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (18#1) [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:1]
 WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
 WARNING: [Synth 8-3331] design layerControl has unconnected port o_led[10]
 WARNING: [Synth 8-3331] design layerControl has unconnected port o_led[9]
@@ -273,8 +282,12 @@ WARNING: [Synth 8-3331] design top has unconnected port LED[3]
 WARNING: [Synth 8-3331] design top has unconnected port LED[2]
 WARNING: [Synth 8-3331] design top has unconnected port LED[1]
 WARNING: [Synth 8-3331] design top has unconnected port LED[0]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[3]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[2]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[1]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 891.648 ; gain = 249.875
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 899.906 ; gain = 258.520
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -287,10 +300,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 891.648 ; gain = 249.875
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 899.906 ; gain = 258.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 891.648 ; gain = 249.875
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 899.906 ; gain = 258.520
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -304,27 +317,27 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1036.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1039.469 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1036.418 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1039.469 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.418 ; gain = 394.645
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.418 ; gain = 394.645
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for getAccel/getXY. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.418 ; gain = 394.645
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.469 ; gain = 398.082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'layer_state_reg' in module 'layerControl'
 INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'top'
@@ -349,20 +362,20 @@ INFO: [Synth 8-3354] encoded FSM with state register 'layer_state_reg' using enc
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-         GAME_START_MENU |                        100000000 |                             0000
-            GAME_NEW_RST |                        000000100 |                             1000
-                GAME_NEW |                        010000000 |                             0100
-           GAME_BALL_RST |                        001000000 |                             0110
-            GAME_PLAYING |                        000100000 |                             0001
-               GAME_FAIL |                        000001000 |                             0010
-                GAME_WIN |                        000000001 |                             0011
-              GAME_PAUSE |                        000010000 |                             0111
-              GAME_AGAIN |                        000000010 |                             0101
+         GAME_START_MENU |                             1001 |                             0000
+            GAME_NEW_RST |                             0100 |                             1000
+                GAME_NEW |                             0000 |                             0100
+           GAME_BALL_RST |                             0001 |                             0110
+            GAME_PLAYING |                             0111 |                             0001
+               GAME_FAIL |                             0110 |                             0010
+                GAME_WIN |                             0010 |                             0011
+             GAME_FINISH |                             0101 |                             1001
+              GAME_PAUSE |                             1000 |                             0111
+              GAME_AGAIN |                             0011 |                             0101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'one-hot' in module 'top'
-WARNING: [Synth 8-327] inferring latch for variable 'select_pos_alt_reg' [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/main.v:132]
+INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1036.418 ; gain = 394.645
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1039.469 ; gain = 398.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -384,7 +397,7 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 14    
 	   2 Input      5 Bit       Adders := 14    
-	   2 Input      4 Bit       Adders := 8     
+	   2 Input      4 Bit       Adders := 12    
 	   2 Input      3 Bit       Adders := 3     
 +---XORs : 
 	   2 Input     16 Bit         XORs := 2     
@@ -401,17 +414,18 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 6     
 	                6 Bit    Registers := 7     
 	                5 Bit    Registers := 7     
-	                4 Bit    Registers := 9     
+	                4 Bit    Registers := 10    
 	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 30    
+	                1 Bit    Registers := 31    
 +---Multipliers : 
 	                32x32  Multipliers := 18    
 +---RAMs : 
 	             450K Bit         RAMs := 2     
-	             176K Bit         RAMs := 1     
-	              22K Bit         RAMs := 1     
+	             240K Bit         RAMs := 1     
+	              30K Bit         RAMs := 1     
 +---Muxes : 
 	  18 Input    180 Bit        Muxes := 1     
+	   2 Input     70 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 2     
 	   4 Input     32 Bit        Muxes := 2     
 	   3 Input     17 Bit        Muxes := 1     
@@ -420,24 +434,20 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit        Muxes := 1     
 	   9 Input     15 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 21    
+	   2 Input     10 Bit        Muxes := 25    
 	  10 Input     10 Bit        Muxes := 1     
 	   6 Input     10 Bit        Muxes := 2     
-	   9 Input      9 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 9     
-	   4 Input      9 Bit        Muxes := 1     
-	   3 Input      9 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
 	   8 Input      4 Bit        Muxes := 2     
-	   5 Input      4 Bit        Muxes := 1     
+	  39 Input      4 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 3     
-	   5 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 55    
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 65    
 	   8 Input      1 Bit        Muxes := 6     
-	   9 Input      1 Bit        Muxes := 3     
+	  10 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -450,24 +460,26 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
 	               70 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
 	               10 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
+	   2 Input     70 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
 	   6 Input     10 Bit        Muxes := 2     
-	   9 Input      9 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 9     
-	   4 Input      9 Bit        Muxes := 1     
-	   3 Input      9 Bit        Muxes := 2     
+	  39 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 1     
-	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-	   9 Input      1 Bit        Muxes := 3     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  10 Input      1 Bit        Muxes := 4     
 Module sig_clr 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -545,13 +557,13 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---RAMs : 
-	             176K Bit         RAMs := 1     
+	             240K Bit         RAMs := 1     
 Module sram__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
 +---RAMs : 
-	              22K Bit         RAMs := 1     
+	              30K Bit         RAMs := 1     
 Module drawLayer 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -582,17 +594,19 @@ Module layerControl
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     10 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   9 Input     16 Bit        Muxes := 1     
 	   9 Input     15 Bit        Muxes := 1     
 	  10 Input     10 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 13    
-	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	  10 Input      1 Bit        Muxes := 3     
 Module drawScreenCtrl 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -961,8 +975,6 @@ DSP Report: operator failHole7/conflict2 is absorbed into DSP failHole7/conflict
 DSP Report: Generating DSP failHole7/conflict2, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator failHole7/conflict2 is absorbed into DSP failHole7/conflict2.
 DSP Report: operator failHole7/conflict2 is absorbed into DSP failHole7/conflict2.
-INFO: [Synth 8-5544] ROM "game_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "game_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 WARNING: [Synth 8-3331] design accelBallMove has unconnected port screenend
 WARNING: [Synth 8-3331] design drawScreenCtrl has unconnected port o_led[10]
 WARNING: [Synth 8-3331] design drawScreenCtrl has unconnected port o_led[9]
@@ -976,38 +988,15 @@ WARNING: [Synth 8-3331] design top has unconnected port LED[3]
 WARNING: [Synth 8-3331] design top has unconnected port LED[2]
 WARNING: [Synth 8-3331] design top has unconnected port LED[1]
 WARNING: [Synth 8-3331] design top has unconnected port LED[0]
-WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_a/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
-WARNING: [Synth 8-3936] Found unconnected internal register 'drawScreen/vram_b/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
-Removed BRAM instance from module top due to constant propagation
-Removed BRAM instance from module top due to constant propagation
-Removed 2 RAM instances from module top due to constant propagation
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[79]' (FDE) to 'getAllPos/o_rand_list_reg[168]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[9]' (FDE) to 'getAllPos/o_rand_list_reg[98]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[19]' (FDE) to 'getAllPos/o_rand_list_reg[108]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[29]' (FDE) to 'getAllPos/o_rand_list_reg[118]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[39]' (FDE) to 'getAllPos/o_rand_list_reg[128]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[49]' (FDE) to 'getAllPos/o_rand_list_reg[138]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[59]' (FDE) to 'getAllPos/o_rand_list_reg[148]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[89]' (FDE) to 'getAllPos/o_rand_list_reg[178]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[69]' (FDE) to 'getAllPos/o_rand_list_reg[158]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[168]' (FDE) to 'getAllPos/o_rand_list_reg[169]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[98]' (FDE) to 'getAllPos/o_rand_list_reg[99]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[108]' (FDE) to 'getAllPos/o_rand_list_reg[109]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[118]' (FDE) to 'getAllPos/o_rand_list_reg[119]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[128]' (FDE) to 'getAllPos/o_rand_list_reg[129]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[138]' (FDE) to 'getAllPos/o_rand_list_reg[139]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[148]' (FDE) to 'getAllPos/o_rand_list_reg[149]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[178]' (FDE) to 'getAllPos/o_rand_list_reg[179]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[158]' (FDE) to 'getAllPos/o_rand_list_reg[159]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[169] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[99] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[109] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[119] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[129] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[139] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[149] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[179] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/o_rand_list_reg[159] )
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[3]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[2]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[1]
+WARNING: [Synth 8-3331] design top has unconnected port level_choose[0]
+WARNING: [Synth 8-3936] Found unconnected internal register 'vram_a/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
+WARNING: [Synth 8-3936] Found unconnected internal register 'vram_b/o_data_reg' and it is trimmed from '8' to '6' bits. [C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/sram.v:25]
+Removed BRAM instance from module drawScreenCtrl due to constant propagation
+Removed BRAM instance from module drawScreenCtrl due to constant propagation
+Removed 2 RAM instances from module drawScreenCtrl due to constant propagation
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawBackground/address_s_reg[11]' (FDRE) to 'drawScreen/drawLayers/drawBackground/address_s_reg[12]'
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawWinhole/address_s_reg[11]' (FDRE) to 'drawScreen/drawLayers/drawWinhole/address_s_reg[12]'
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawSelect/address_s_reg[12]' (FDRE) to 'drawScreen/drawLayers/drawSelect/address_s_reg[13]'
@@ -1016,46 +1005,73 @@ INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawHeading1/addres
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawBackground/address_s_reg[13]' (FDRE) to 'drawScreen/drawLayers/drawBackground/address_s_reg[14]'
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawFailhole/address_s_reg[13]' (FDRE) to 'drawScreen/drawLayers/drawFailhole/address_s_reg[14]'
 INFO: [Synth 8-3886] merging instance 'drawScreen/drawLayers/drawBall/address_s_reg[13]' (FDRE) to 'drawScreen/drawLayers/drawBall/address_s_reg[14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawHeading2/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawSelect/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawBackground/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawFailhole/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawWinhole/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawHeading1/address_s_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\drawScreen/drawLayers/drawBall/address_s_reg[14] )
-INFO: [Synth 8-3886] merging instance 'wh_pos_x_reg[9]' (FDE) to 'fh_pos_x_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawHeading2/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawSelect/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawBackground/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawFailhole/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawWinhole/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawHeading1/address_s_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (drawScreen/\drawLayers/drawBall/address_s_reg[14] )
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[9]' (FDE) to 'getAllPos/o_rand_list_reg[98]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[19]' (FDE) to 'getAllPos/o_rand_list_reg[108]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[29]' (FDE) to 'getAllPos/o_rand_list_reg[118]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[39]' (FDE) to 'getAllPos/o_rand_list_reg[128]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[49]' (FDE) to 'getAllPos/o_rand_list_reg[138]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[59]' (FDE) to 'getAllPos/o_rand_list_reg[148]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[69]' (FDE) to 'getAllPos/o_rand_list_reg[158]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[89]' (FDE) to 'getAllPos/o_rand_list_reg[178]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[79]' (FDE) to 'getAllPos/o_rand_list_reg[168]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[98]' (FDE) to 'getAllPos/o_rand_list_reg[99]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[108]' (FDE) to 'getAllPos/o_rand_list_reg[109]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[118]' (FDE) to 'getAllPos/o_rand_list_reg[119]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[128]' (FDE) to 'getAllPos/o_rand_list_reg[129]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[138]' (FDE) to 'getAllPos/o_rand_list_reg[139]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[148]' (FDE) to 'getAllPos/o_rand_list_reg[149]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[158]' (FDE) to 'getAllPos/o_rand_list_reg[159]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[178]' (FDE) to 'getAllPos/o_rand_list_reg[179]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/o_rand_list_reg[168]' (FDE) to 'getAllPos/o_rand_list_reg[169]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[99] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[109] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[119] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[129] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[139] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[149] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[159] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[179] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\o_rand_list_reg[169] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\gen_pos_state_reg[3] )
+INFO: [Synth 8-3886] merging instance 'getAllPos/x_succeeded_reg[9]' (FDE) to 'getAllPos/y_succeeded_reg[8]'
+INFO: [Synth 8-3886] merging instance 'getAllPos/y_succeeded_reg[8]' (FDE) to 'getAllPos/y_succeeded_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (getAllPos/\y_succeeded_reg[9] )
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[9]' (FDE) to 'fh_pos_x_reg[19]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[19]' (FDE) to 'fh_pos_x_reg[29]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[29]' (FDE) to 'fh_pos_x_reg[39]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[39]' (FDE) to 'fh_pos_x_reg[49]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[49]' (FDE) to 'fh_pos_x_reg[59]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[59]' (FDE) to 'fh_pos_x_reg[69]'
-INFO: [Synth 8-3886] merging instance 'bl_pos_initial_x_reg[9]' (FDE) to 'fh_pos_x_reg[69]'
-INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[69]' (FDE) to 'bl_pos_initial_y_reg[8]'
-INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[8]'
+INFO: [Synth 8-3886] merging instance 'fh_pos_x_reg[69]' (FDE) to 'wh_pos_x_reg[9]'
+INFO: [Synth 8-3886] merging instance 'bl_pos_initial_x_reg[9]' (FDE) to 'wh_pos_x_reg[9]'
+INFO: [Synth 8-3886] merging instance 'wh_pos_x_reg[9]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[18]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[28]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[38]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[48]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[58]' (FDE) to 'bl_pos_initial_y_reg[8]'
+INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[68]' (FDE) to 'bl_pos_initial_y_reg[8]'
 INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[68]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[9]' (FDE) to 'bl_pos_initial_y_reg[9]'
+INFO: [Synth 8-3886] merging instance 'wh_pos_y_reg[8]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[9]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[19]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[29]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[39]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[49]' (FDE) to 'bl_pos_initial_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[59]' (FDE) to 'bl_pos_initial_y_reg[9]'
-INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[9]' (FDE) to 'fh_pos_y_reg[69]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/gen_pos_state_reg[3] )
-INFO: [Synth 8-3886] merging instance 'getAllPos/x_succeeded_reg[9]' (FDE) to 'getAllPos/y_succeeded_reg[8]'
-INFO: [Synth 8-3886] merging instance 'getAllPos/y_succeeded_reg[8]' (FDE) to 'getAllPos/y_succeeded_reg[9]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\getAllPos/y_succeeded_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fh_pos_y_reg[69] )
+INFO: [Synth 8-3886] merging instance 'fh_pos_y_reg[69]' (FDE) to 'bl_pos_initial_y_reg[9]'
+INFO: [Synth 8-3886] merging instance 'bl_pos_initial_y_reg[9]' (FDE) to 'wh_pos_y_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\wh_pos_y_reg[9] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1036.418 ; gain = 394.645
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1039.469 ; gain = 398.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1073,14 +1089,14 @@ ROM:
 
 
 Block RAM: Preliminary Mapping  Report (see note below)
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name           | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|top                   | drawScreen/vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
-|top                   | drawScreen/vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
-|sram__parameterized0: | memory_array_reg                   | 32 K x 8(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 8      | 
-|sram__parameterized1: | memory_array_reg                   | 32 K x 1(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 1      | 
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|drawScreen            | vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|drawScreen            | vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|sram__parameterized0: | memory_array_reg        | 32 K x 8(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 8      | 
+|sram__parameterized1: | memory_array_reg        | 32 K x 1(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 1      | 
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
@@ -1183,25 +1199,25 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_1/drawScreen/vram_a/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_2/drawScreen/vram_b/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_18/drawScreen/spritebuf/memory_array_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_19/drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_0/vram_a/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_1/vram_b/memory_array_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_2/spritebuf/memory_array_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance drawScreen/i_3/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1212,27 +1228,27 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1081.711 ; gain = 439.938
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1084.262 ; gain = 442.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1163.141 ; gain = 521.367
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1128.184 ; gain = 486.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping  Report
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name           | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|top                   | drawScreen/vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
-|top                   | drawScreen/vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
-|sram__parameterized0: | memory_array_reg                   | 32 K x 8(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 8      | 
-|sram__parameterized1: | memory_array_reg                   | 32 K x 1(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 1      | 
-+----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|drawScreen            | vram_a/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|drawScreen            | vram_b/memory_array_reg | 64 K x 6(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 12     | 
+|sram__parameterized0: | memory_array_reg        | 32 K x 8(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 8      | 
+|sram__parameterized1: | memory_array_reg        | 32 K x 1(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 1      | 
++----------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -1266,7 +1282,7 @@ INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_arr
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spritebuf/memory_array_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance drawScreen/spriteAlphabuf/memory_array_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1146.582 ; gain = 505.195
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1290,7 +1306,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1147.984 ; gain = 506.598
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1303,7 +1319,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1147.984 ; gain = 506.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1315,25 +1331,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:00 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1147.984 ; gain = 506.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:00 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1147.984 ; gain = 506.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:00 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1352,18 +1368,18 @@ Report Cell Usage:
 +------+-----------------+------+
 |1     |ADXL362Control_0 |     1|
 |2     |BUFG             |     1|
-|3     |CARRY4           |   249|
+|3     |CARRY4           |   250|
 |4     |DSP48E1_1        |    54|
 |5     |DSP48E1_2        |     1|
 |6     |DSP48E1_3        |     7|
 |7     |DSP48E1_4        |     7|
 |8     |DSP48E1_5        |     2|
-|9     |LUT1             |    52|
-|10    |LUT2             |   814|
-|11    |LUT3             |   164|
-|12    |LUT4             |   320|
-|13    |LUT5             |   165|
-|14    |LUT6             |   330|
+|9     |LUT1             |    53|
+|10    |LUT2             |   698|
+|11    |LUT3             |    92|
+|12    |LUT4             |   241|
+|13    |LUT5             |   312|
+|14    |LUT6             |   600|
 |15    |MUXF7            |    46|
 |16    |RAMB36E1         |    12|
 |17    |RAMB36E1_1       |    12|
@@ -1374,89 +1390,88 @@ Report Cell Usage:
 |22    |RAMB36E1_6       |     1|
 |23    |RAMB36E1_7       |     1|
 |24    |RAMB36E1_8       |     1|
-|25    |FDRE             |  1043|
-|26    |FDSE             |     5|
-|27    |LD               |     3|
-|28    |IBUF             |     9|
-|29    |OBUF             |    21|
-|30    |OBUFT            |    12|
+|25    |FDRE             |  1044|
+|26    |FDSE             |     8|
+|27    |IBUF             |     9|
+|28    |OBUF             |    21|
+|29    |OBUFT            |    12|
 +------+-----------------+------+
 
 Report Instance Areas: 
 +------+---------------------+------------------------------------+------+
 |      |Instance             |Module                              |Cells |
 +------+---------------------+------------------------------------+------+
-|1     |top                  |                                    |  3388|
+|1     |top                  |                                    |  3541|
 |2     |  againClr           |sig_clr                             |    10|
 |3     |  againPulse         |sig_pulse                           |     3|
-|4     |  downBTNClr         |sig_clr_0                           |    10|
-|5     |  downBTNPulse       |sig_pulse_1                         |     5|
-|6     |  drawScreen         |drawScreenCtrl                      |   952|
-|7     |    display          |vga320x180                          |    97|
-|8     |    drawLayers       |layerControl                        |   718|
-|9     |      drawBackground |drawLayer                           |   101|
-|10    |      drawBall       |drawLayer__parameterized0           |    69|
-|11    |      drawFailhole   |drawLayer__parameterized0_19        |   124|
-|12    |      drawHeading1   |drawLayer__parameterized0_20        |    78|
-|13    |      drawHeading2   |drawLayer__parameterized0_21        |    66|
-|14    |      drawOption     |drawLayer__parameterized0_22        |    89|
-|15    |      drawSelect     |drawLayer__parameterized0_23        |    68|
-|16    |      drawWinhole    |drawLayer__parameterized0_24        |    95|
-|17    |    spriteAlphabuf   |sram__parameterized1                |     1|
-|18    |    spritebuf        |sram__parameterized0                |     6|
-|19    |    vram_a           |sram                                |    24|
-|20    |    vram_b           |sram_18                             |    36|
-|21    |  dropControl        |dropInHoles                         |  1021|
-|22    |    failHole1        |positionConflict__parameterized0    |   104|
-|23    |    failHole2        |positionConflict__parameterized0_11 |   108|
-|24    |    failHole3        |positionConflict__parameterized0_12 |   111|
-|25    |    failHole4        |positionConflict__parameterized0_13 |   130|
-|26    |    failHole5        |positionConflict__parameterized0_14 |   108|
-|27    |    failHole6        |positionConflict__parameterized0_15 |   104|
-|28    |    failHole7        |positionConflict__parameterized0_16 |   103|
-|29    |    winHole          |positionConflict__parameterized0_17 |   253|
-|30    |  getAccel           |myAccelerometerCtrl                 |   160|
-|31    |  getAllPos          |getRandPos                          |   463|
-|32    |    genDecide        |positionConflict                    |   119|
-|33    |    randomX          |random                              |    32|
-|34    |    randomY          |random__parameterized0              |    26|
-|35    |  moveTheBall        |accelBallMove                       |   437|
-|36    |    pos_x            |calculateX                          |    52|
-|37    |    pos_y            |calculateX__parameterized0          |    55|
-|38    |    vx               |calculateV                          |   104|
-|39    |    vy               |calculateV_10                       |   109|
-|40    |  newGameClr         |sig_clr_2                           |    10|
-|41    |  newGamePulse       |sig_pulse_3                         |     2|
-|42    |  okBTNClr           |sig_clr_4                           |    11|
-|43    |  okBTNPulse         |sig_pulse_5                         |    15|
-|44    |  rstClr             |sig_clr_6                           |    10|
-|45    |  rstPulse           |sig_pulse_7                         |    19|
-|46    |  upBTNClr           |sig_clr_8                           |    10|
-|47    |  upBTNPulse         |sig_pulse_9                         |     4|
+|4     |  classicPos         |fixPos                              |     1|
+|5     |  downBTNClr         |sig_clr_0                           |    10|
+|6     |  downBTNPulse       |sig_pulse_1                         |     2|
+|7     |  drawScreen         |drawScreenCtrl                      |   968|
+|8     |    display          |vga320x180                          |   107|
+|9     |    drawLayers       |layerControl                        |   735|
+|10    |      drawBackground |drawLayer                           |    91|
+|11    |      drawBall       |drawLayer__parameterized0           |    74|
+|12    |      drawFailhole   |drawLayer__parameterized0_19        |   133|
+|13    |      drawHeading1   |drawLayer__parameterized0_20        |    76|
+|14    |      drawHeading2   |drawLayer__parameterized0_21        |    76|
+|15    |      drawOption     |drawLayer__parameterized0_22        |    79|
+|16    |      drawSelect     |drawLayer__parameterized0_23        |    74|
+|17    |      drawWinhole    |drawLayer__parameterized0_24        |    99|
+|18    |    spriteAlphabuf   |sram__parameterized1                |     1|
+|19    |    spritebuf        |sram__parameterized0                |     6|
+|20    |    vram_a           |sram                                |    24|
+|21    |    vram_b           |sram_18                             |    36|
+|22    |  dropControl        |dropInHoles                         |   998|
+|23    |    failHole1        |positionConflict__parameterized0    |   115|
+|24    |    failHole2        |positionConflict__parameterized0_11 |    98|
+|25    |    failHole3        |positionConflict__parameterized0_12 |    98|
+|26    |    failHole4        |positionConflict__parameterized0_13 |   290|
+|27    |    failHole5        |positionConflict__parameterized0_14 |    98|
+|28    |    failHole6        |positionConflict__parameterized0_15 |    98|
+|29    |    failHole7        |positionConflict__parameterized0_16 |    99|
+|30    |    winHole          |positionConflict__parameterized0_17 |   102|
+|31    |  getAccel           |myAccelerometerCtrl                 |   160|
+|32    |  getAllPos          |getRandPos                          |   580|
+|33    |    genDecide        |positionConflict                    |   121|
+|34    |    randomX          |random                              |    20|
+|35    |    randomY          |random__parameterized0              |    18|
+|36    |  moveTheBall        |accelBallMove                       |   439|
+|37    |    pos_x            |calculateX                          |    52|
+|38    |    pos_y            |calculateX__parameterized0          |    55|
+|39    |    vx               |calculateV                          |   104|
+|40    |    vy               |calculateV_10                       |   108|
+|41    |  newGameClr         |sig_clr_2                           |    10|
+|42    |  newGamePulse       |sig_pulse_3                         |    30|
+|43    |  okBTNClr           |sig_clr_4                           |    11|
+|44    |  okBTNPulse         |sig_pulse_5                         |    19|
+|45    |  rstClr             |sig_clr_6                           |    10|
+|46    |  rstPulse           |sig_pulse_7                         |    15|
+|47    |  upBTNClr           |sig_clr_8                           |    10|
+|48    |  upBTNPulse         |sig_pulse_9                         |     7|
 +------+---------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 1172.168 ; gain = 385.625
-Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1172.168 ; gain = 530.395
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:00:59 . Memory (MB): peak = 1151.961 ; gain = 371.012
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1151.961 ; gain = 510.574
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 400 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 398 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1172.168 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1151.961 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
-  LD => LDCE: 3 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-205 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+205 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1172.168 ; gain = 786.883
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1172.168 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 1151.961 ; gain = 767.449
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1151.961 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/14832/Documents/study/CS/moshu/labs/lab10/balance/balance.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 16:48:07 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 21:15:12 2019...
