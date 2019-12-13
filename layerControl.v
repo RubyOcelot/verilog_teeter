@@ -11,6 +11,8 @@ module layerControl #(parameter
     SPRITE_SEL_INDEX=6,
     SPRITE_MODE_INDEX=7,
     SPRITE_PAUSE_INDEX=8,
+    SPRITE_FAIL_INDEX=9,
+    SPRITE_WIN_INDEX=10,
     SPRITE_SIZE=32,
     MAX_FAILHOLE_NUM=7
     )
@@ -28,6 +30,8 @@ module layerControl #(parameter
     input theme_choose,
     input is_game_start_menu,
     input is_game_pause,
+    input is_game_win,
+    input is_game_fail,
     input [2:0]i_select_pos,
     output [VRAM_A_WIDTH-1:0] o_address_screen,
     output [SPRITEBUF_A_WIDTH-1:0] o_address_s,
@@ -92,7 +96,7 @@ module layerControl #(parameter
                         if(is_game_start_menu)begin
                             layer_state<=LAYER_HEADING1;
                         end
-                        else if(is_game_pause)begin
+                        else if(is_game_pause|is_game_fail|is_game_win)begin
                             layer_state<=LAYER_OPTION;
                         end
                         else begin
@@ -509,6 +513,12 @@ module layerControl #(parameter
         end
         else if(is_game_pause)begin
             sprite_op_index=SPRITE_PAUSE_INDEX;
+        end
+        else if(is_game_fail)begin
+            sprite_op_index=SPRITE_FAIL_INDEX;
+        end
+        else if(is_game_win)begin
+            sprite_op_index=SPRITE_WIN_INDEX;
         end
         else begin
             sprite_op_index=0;

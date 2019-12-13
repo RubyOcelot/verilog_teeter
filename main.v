@@ -71,7 +71,7 @@ module top(
 
     // sprite buffer (read-only)
     localparam SPRITE_SIZE = 32;  // dimensions of square sprites in pixels
-    localparam SPRITE_COUNT = 18;  // number of sprites in buffer
+    localparam SPRITE_COUNT = 22;  // number of sprites in buffer
     localparam SPRITEBUF_D_WIDTH = 8;  // colour bits per pixel
     localparam SPRITEBUF_DEPTH = SPRITE_SIZE * SPRITE_SIZE * SPRITE_COUNT;    
     localparam SPRITEBUF_A_WIDTH = 15;  // 2^13 == 8,096 == 32 x 256 =SPRITEBUF_DEPTH
@@ -85,6 +85,8 @@ module top(
     localparam SPRITE_SEL_INDEX =6;
     localparam SPRITE_MODE_INDEX=7;
     localparam SPRITE_PAUSE_INDEX=8;
+    localparam SPRITE_FAIL_INDEX=9;
+    localparam SPRITE_WIN_INDEX=10;
 //    localparam SPRITE_BG_OFFSET = SPRITE_BG_INDEX * SPRITE_SIZE * SPRITE_SIZE;
 //    localparam SPRITE_BL_OFFSET = SPRITE_BL_INDEX * SPRITE_SIZE * SPRITE_SIZE;
 //    localparam SPRITE_FH_OFFSET = SPRITE_FH_INDEX * SPRITE_SIZE * SPRITE_SIZE;
@@ -120,8 +122,24 @@ module top(
 
     reg [2:0]max_option,select_pos=0;
     wire screenend;
-    wire is_game_playing,is_game_pause,is_game_start_menu;
+    wire is_game_playing,is_game_pause,is_game_start_menu,is_game_fail,is_game_win;
     //vga controller
+
+    reg [2:0]select_pos_alt=0;
+    always @(*) begin
+        if(game_mode==ENDLESS)begin
+            case(game_state)
+                GAME_START_MENU:select_pos_alt=select_pos;
+                GAME_PAUSE: select_pos_alt=select_pos;
+                GAME_FAIL: select_pos_alt=select_pos+3'h1;
+                GAME_WIN:select_pos_alt=select_pos+3'h1;
+                default:select_pos_alt=select_pos;
+            endcase
+        end
+        else begin
+
+        end
+    end
     drawScreenCtrl #(
         .VRAM_A_WIDTH(VRAM_A_WIDTH),
         .VRAM_D_WIDTH(VRAM_D_WIDTH),
@@ -137,6 +155,8 @@ module top(
         .SPRITE_SEL_INDEX(SPRITE_SEL_INDEX),
         .SPRITE_MODE_INDEX(SPRITE_MODE_INDEX),
         .SPRITE_PAUSE_INDEX(SPRITE_PAUSE_INDEX),
+        .SPRITE_FAIL_INDEX(SPRITE_FAIL_INDEX),
+        .SPRITE_WIN_INDEX(SPRITE_WIN_INDEX),
         .SPRITEBUF_A_WIDTH(SPRITEBUF_A_WIDTH),
         .SPRITEBUF_D_WIDTH(SPRITEBUF_D_WIDTH),
         .SPRITEBUF_DEPTH(SPRITEBUF_DEPTH),
@@ -155,7 +175,9 @@ module top(
         .theme_choose(theme_choose),
         .is_game_start_menu(is_game_start_menu),
         .is_game_pause(is_game_pause),
-        .i_select_pos(select_pos),
+        .is_game_win(is_game_win),
+        .is_game_fail(is_game_fail),
+        .i_select_pos(select_pos_alt),
         .VGA_R(VGA_R),
         .VGA_G(VGA_G),
         .VGA_B(VGA_B),
@@ -349,23 +371,69 @@ module top(
                 end
                 GAME_PAUSE: begin
                     if(ok_btn)begin
-                        case(select_pos)
-                            3'h0: begin
-                                game_state<=GAME_PLAYING;
-                            end
-                            3'h1: begin
-                                game_state<=GAME_AGAIN;
-                            end
-                            3'h2: begin
-                                game_state<=GAME_NEW_RST;
-                            end
-                            default: begin
-                                game_state<=GAME_PAUSE;
-                            end
-                        endcase
+                        if(game_mode==ENDLESS) begin
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_PLAYING;
+                                end
+                                3'h1: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                3'h2: begin
+                                    game_state<=GAME_NEW_RST;
+                                end
+                                default: begin
+                                    game_state<=GAME_PAUSE;
+                                end
+                            endcase
+                        end
                     end
                     else
                         game_state<=GAME_PAUSE;
+                end
+                GAME_FAIL: begin
+                    if(ok_btn)begin
+                        if(game_mode==ENDLESS) begin
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                3'h1: begin
+                                    game_state<=GAME_NEW_RST;
+                                end
+                                default: begin
+                                    game_state<=GAME_FAIL;
+                                end
+                            endcase
+                        end
+                        else begin
+
+                        end
+                    end
+                    else
+                        game_state<=GAME_FAIL;
+                end
+                GAME_WIN: begin
+                    if(ok_btn)begin
+                        if(game_mode==ENDLESS) begin
+                            case(select_pos)
+                                3'h0: begin
+                                    game_state<=GAME_AGAIN;
+                                end
+                                3'h1: begin
+                                    game_state<=GAME_NEW_RST;
+                                end
+                                default: begin
+                                    game_state<=GAME_WIN;
+                                end
+                            endcase
+                        end
+                        else begin
+
+                        end
+                    end
+                    else
+                        game_state<=GAME_WIN;
                 end
             default: game_state<=game_state;
         endcase
@@ -405,6 +473,8 @@ module top(
     assign is_game_playing=(game_state==GAME_PLAYING);
     assign is_game_start_menu=(game_state==GAME_START_MENU);
     assign is_game_pause=(game_state==GAME_PAUSE);
+    assign is_game_fail=(game_state==GAME_FAIL);
+    assign is_game_win=(game_state==GAME_WIN);
     
     assign new_game_rst=rst|new_game_pulse|(game_state==GAME_NEW_RST);
     assign again_rst=rst|new_game_rst|again_pulse|(game_state==GAME_AGAIN);

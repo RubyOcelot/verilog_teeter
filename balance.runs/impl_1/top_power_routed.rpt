@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Dec 13 15:47:21 2019
+| Date             : Fri Dec 13 16:55:36 2019
 | Host             : DESKTOP-T1S8RDD running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.250        |
+| Total On-Chip Power (W)  | 0.256        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.151        |
+| Dynamic (W)              | 0.157        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 83.8         |
+| Junction Temperature (C) | 26.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.008 |        3 |       --- |             --- |
-| Slice Logic    |     0.009 |     3769 |       --- |             --- |
-|   LUT as Logic |     0.007 |     1826 |     63400 |            2.88 |
+| Clocks         |     0.007 |        3 |       --- |             --- |
+| Slice Logic    |     0.010 |     3767 |       --- |             --- |
+|   LUT as Logic |     0.008 |     1832 |     63400 |            2.89 |
 |   CARRY4       |     0.002 |      261 |     15850 |            1.65 |
-|   Register     |    <0.001 |     1298 |    126800 |            1.02 |
+|   Register     |    <0.001 |     1285 |    126800 |            1.01 |
 |   F7/F8 Muxes  |    <0.001 |       46 |     63400 |            0.07 |
-|   Others       |     0.000 |      123 |       --- |             --- |
-| Signals        |     0.025 |     5256 |       --- |             --- |
+|   Others       |     0.000 |      125 |       --- |             --- |
+| Signals        |     0.030 |     5251 |       --- |             --- |
 | Block RAM      |     0.044 |       31 |       135 |           22.96 |
-| DSPs           |     0.055 |       71 |       240 |           29.58 |
-| I/O            |     0.010 |       42 |       210 |           20.00 |
+| DSPs           |     0.056 |       71 |       240 |           29.58 |
+| I/O            |     0.009 |       42 |       210 |           20.00 |
 | Static Power   |     0.099 |          |           |                 |
-| Total          |     0.250 |          |           |                 |
+| Total          |     0.256 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.153 |       0.137 |      0.016 |
+| Vccint    |       1.000 |     0.160 |       0.144 |      0.016 |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,30 +143,29 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| top                |     0.151 |
+| top                |     0.157 |
 |   drawScreen       |     0.051 |
 |     drawLayers     |     0.005 |
 |       drawBall     |     0.001 |
-|       drawSelect   |     0.001 |
 |     spriteAlphabuf |     0.002 |
 |     spritebuf      |     0.011 |
-|     vram_a         |     0.015 |
+|     vram_a         |     0.016 |
 |     vram_b         |     0.016 |
-|   dropControl      |     0.070 |
+|   dropControl      |     0.076 |
 |     failHole1      |     0.009 |
 |     failHole2      |     0.009 |
-|     failHole3      |     0.008 |
-|     failHole4      |     0.009 |
-|     failHole5      |     0.009 |
-|     failHole6      |     0.009 |
-|     failHole7      |     0.008 |
-|     winHole        |     0.009 |
+|     failHole3      |     0.009 |
+|     failHole4      |     0.010 |
+|     failHole5      |     0.010 |
+|     failHole6      |     0.010 |
+|     failHole7      |     0.009 |
+|     winHole        |     0.010 |
 |   getAccel         |     0.003 |
 |     getXY          |     0.003 |
 |       U0           |     0.003 |
-|   getAllPos        |     0.013 |
-|     genDecide      |     0.008 |
-|   moveTheBall      |     0.001 |
+|   getAllPos        |     0.014 |
+|     genDecide      |     0.009 |
+|   moveTheBall      |     0.002 |
 +--------------------+-----------+
 
 
